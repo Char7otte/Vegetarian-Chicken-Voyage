@@ -1,15 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bf2qtksf3lqyg"]
+[gd_scene load_steps=10 format=3 uid="uid://bf2qtksf3lqyg"]
 
-[ext_resource type="PackedScene" path="res://Assets/Offline/Models/Coffee Table/table.glb" id="1_xec0l"]
+[ext_resource type="PackedScene" uid="uid://2c4rn6kk1jjm" path="res://Assets/Offline/Models/Coffee Table/table.glb" id="1_xec0l"]
+[ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://Assets/Offline/Materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://Scenes/Object Scenes/player/player.tscn" id="2_llmoq"]
+[ext_resource type="Script" path="res://Scenes/Components/interact_component.gd" id="3_cnxhp"]
+[ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/Debug.gd" id="4_yl3pc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yo0o6"]
 size = Vector3(10, 1, 10)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbfmc"]
+albedo_texture = ExtResource("2_a3m2a")
+
 [sub_resource type="BoxMesh" id="BoxMesh_dln45"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wgodj"]
-size = Vector3(4.37191, 1, 2.6)
+size = Vector3(4.37191, 1, 1.2125)
 
 [node name="TestLevel" type="Node3D"]
 
@@ -19,6 +25,7 @@ size = Vector3(4.37191, 1, 2.6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 
 [node name="Floor" type="StaticBody3D" parent="Environment"]
+collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor"]
@@ -28,11 +35,15 @@ metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Floor"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_fbfmc")
 mesh = SubResource("BoxMesh_dln45")
 metadata/_edit_lock_ = true
 
 [node name="Coffee Table" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.923452, 3.01533)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.923452, -3.15005)
+collision_layer = 3
+collision_mask = 0
+script = ExtResource("3_cnxhp")
 
 [node name="table" parent="Environment/Coffee Table" instance=ExtResource("1_xec0l")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -41,3 +52,6 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Coffee Table"]
 shape = SubResource("BoxShape3D_wgodj")
 metadata/_edit_lock_ = true
+
+[node name="Debug" type="Node" parent="."]
+script = ExtResource("4_yl3pc")
