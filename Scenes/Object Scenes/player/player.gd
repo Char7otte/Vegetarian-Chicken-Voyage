@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 var player_movement_vector: Vector3
 
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -15,8 +16,8 @@ func _process(_delta):
 	player_movement_vector = get_player_movement_vector()
 	player_movement_vector = player_movement_vector.rotated(Vector3.UP, rotation.y) 
 	#rotates the player accordingly with the camera
-	
-	
+
+
 func _physics_process(_delta):
 	velocity = player_movement_vector * player_speed
 	move_and_slide()
@@ -25,6 +26,7 @@ func _physics_process(_delta):
 func _input(event):
 	mouse_camera_control(event)
 	
+
 
 func get_player_movement_vector():
 	var movement_vector = Vector3.ZERO
