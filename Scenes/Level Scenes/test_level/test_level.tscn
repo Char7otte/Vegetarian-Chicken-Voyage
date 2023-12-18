@@ -13,7 +13,7 @@ albedo_texture = ExtResource("2_a3m2a")
 [sub_resource type="BoxMesh" id="BoxMesh_dln45"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wgodj"]
-size = Vector3(4.37191, 1, 2.6)
+size = Vector3(4.37191, 1, 1.2125)
 
 [node name="TestLevel" type="Node3D"]
 
