@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf2qtksf3lqyg"]
+
+[ext_resource type="PackedScene" path="res://Assets/Offline/Models/Coffee Table/table.glb" id="1_xec0l"]
+[ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://Scenes/Object Scenes/player/player.tscn" id="2_llmoq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yo0o6"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dln45"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wgodj"]
+size = Vector3(4.37191, 1, 2.6)
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_llmoq")]
+
+[node name="Environment" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+
+[node name="Floor" type="StaticBody3D" parent="Environment"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0236816)
+shape = SubResource("BoxShape3D_yo0o6")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Floor"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_dln45")
+metadata/_edit_lock_ = true
+
+[node name="Coffee Table" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.923452, 3.01533)
+
+[node name="table" parent="Environment/Coffee Table" instance=ExtResource("1_xec0l")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Coffee Table"]
+shape = SubResource("BoxShape3D_wgodj")
+metadata/_edit_lock_ = true
