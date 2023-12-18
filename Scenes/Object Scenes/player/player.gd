@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var mouse_sensitivity: float
 
 @onready var player_camera = %PlayerCamera
+@onready var interact_raycast = %InteractRaycast
 
 var player_movement_vector: Vector3
 
@@ -16,6 +17,10 @@ func _process(_delta):
 	player_movement_vector = get_player_movement_vector()
 	player_movement_vector = player_movement_vector.rotated(Vector3.UP, rotation.y) 
 	#rotates the player accordingly with the camera
+	
+	if interact_raycast.is_colliding():
+		var collided_collision_node = interact_raycast.get_collider()
+		print(collided_collision_node)
 
 
 func _physics_process(_delta):
@@ -49,3 +54,4 @@ func mouse_camera_control(event):
 		rotation_degrees.y -= mouse_sensitivity * event.relative.x
 		player_camera.rotation_degrees.x -= mouse_sensitivity * event.relative.y
 		player_camera.rotation_degrees.x = clamp(player_camera.rotation_degrees.x, -90, 90)
+		interact_raycast.rotation_degrees = player_camera.rotation_degrees
