@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bf2qtksf3lqyg"]
 
-[ext_resource type="PackedScene" path="res://Assets/Offline/Models/Coffee Table/table.glb" id="1_xec0l"]
+[ext_resource type="PackedScene" uid="uid://2c4rn6kk1jjm" path="res://Assets/Offline/Models/Coffee Table/table.glb" id="1_xec0l"]
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://Assets/Offline/Materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://Scenes/Object Scenes/player/player.tscn" id="2_llmoq"]
 [ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/Debug.gd" id="4_yl3pc"]
@@ -24,6 +24,7 @@ size = Vector3(4.37191, 1, 1.2125)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 
 [node name="Floor" type="StaticBody3D" parent="Environment"]
+collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor"]
@@ -38,7 +39,9 @@ mesh = SubResource("BoxMesh_dln45")
 metadata/_edit_lock_ = true
 
 [node name="Coffee Table" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.923452, 3.01533)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.923452, -3.15005)
+collision_layer = 3
+collision_mask = 0
 
 [node name="table" parent="Environment/Coffee Table" instance=ExtResource("1_xec0l")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
