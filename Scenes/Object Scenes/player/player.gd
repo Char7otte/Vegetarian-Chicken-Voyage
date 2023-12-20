@@ -1,13 +1,9 @@
 extends CharacterBody3D
 
-signal looking_at
-signal interact
-
 @export var player_speed: float
 @export var mouse_sensitivity: float
 
 @onready var player_camera = %PlayerCamera
-@onready var interact_raycast = %InteractRaycast
 
 var player_movement_vector: Vector3
 
@@ -20,12 +16,6 @@ func _process(_delta):
 	player_movement_vector = get_player_movement_vector()
 	player_movement_vector = player_movement_vector.rotated(Vector3.UP, rotation.y) 
 	#rotates the player accordingly with the camera
-	
-	if interact_raycast.is_colliding():
-		looking_at.emit()
-		
-		if Input.is_action_just_pressed("interact"):
-			interact.emit()
 
 
 func _physics_process(_delta):
