@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf2qtksf3lqyg"]
+[gd_scene load_steps=11 format=3 uid="uid://bf2qtksf3lqyg"]
 
 [ext_resource type="PackedScene" uid="uid://2c4rn6kk1jjm" path="res://Assets/Offline/Models/Coffee Table/table.glb" id="1_xec0l"]
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://Assets/Offline/Materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://Scenes/Object Scenes/player/player.tscn" id="2_llmoq"]
 [ext_resource type="Script" path="res://Scenes/Components/interact_component.gd" id="3_cnxhp"]
 [ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/Debug.gd" id="4_yl3pc"]
+[ext_resource type="PackedScene" uid="uid://d1l1pawncqqyi" path="res://Assets/Offline/Models/Coffee Table/animated_table.glb" id="5_1odcl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yo0o6"]
 size = Vector3(10, 1, 10)
@@ -52,6 +53,9 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Coffee Table"]
 shape = SubResource("BoxShape3D_wgodj")
 metadata/_edit_lock_ = true
+
+[node name="animated_table" parent="Environment/Coffee Table" instance=ExtResource("5_1odcl")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.823787, 0.576548, 5.11795)
 
 [node name="Debug" type="Node" parent="."]
 script = ExtResource("4_yl3pc")
