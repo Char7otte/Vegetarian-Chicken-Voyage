@@ -60,4 +60,4 @@ func mouse_camera_control(event):
 		rotation_degrees.y -= mouse_sensitivity * event.relative.x
 		player_camera.rotation_degrees.x -= mouse_sensitivity * event.relative.y
 		player_camera.rotation_degrees.x = clamp(player_camera.rotation_degrees.x, -90, 90)
-		#interact_raycast.rotation_degrees = player_camera.rotation_degrees
+		interact_raycast.rotation_degrees = player_camera.rotation_degrees
