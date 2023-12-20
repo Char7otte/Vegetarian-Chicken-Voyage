@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bs2hb2h5u0ago"
-path="res://.godot/imported/table2.blend-a23439aeffc4a799612ec1e4e3c39ec0.scn"
+uid="uid://bdh88yf7pubvi"
+path="res://.godot/imported/table_godot.blend-6d0aad4ba27ba694e9fbe99447a260bc.scn"
 
 [deps]
 
-source_file="res://Assets/Offline/Models/Coffee Table/table2.blend"
-dest_files=["res://.godot/imported/table2.blend-a23439aeffc4a799612ec1e4e3c39ec0.scn"]
+source_file="res://Assets/Offline/Models/Coffee Table/table_godot.blend"
+dest_files=["res://.godot/imported/table_godot.blend-6d0aad4ba27ba694e9fbe99447a260bc.scn"]
 
 [params]
 
