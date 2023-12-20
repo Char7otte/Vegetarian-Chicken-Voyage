@@ -128,8 +128,31 @@ shape = SubResource("BoxShape3D_ftvsn")
 
 [node name="InteractComponent" parent="Environment/Table" instance=ExtResource("3_fp761")]
 
+[node name="Table2" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, -0.992364, -0.123342, 0, 0.123342, -0.992364, 0, 1, 5.07353)
+collision_layer = 3
+
+[node name="table_godot" type="Node3D" parent="Environment/Table2"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Table" type="MeshInstance3D" parent="Environment/Table2/table_godot"]
+transform = Transform3D(4.36363, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("ArrayMesh_3frqx")
+skeleton = NodePath("")
+
+[node name="Glass" type="MeshInstance3D" parent="Environment/Table2/table_godot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4407, 0)
+mesh = SubResource("ArrayMesh_nbtmr")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.274414, 0.00634766)
+shape = SubResource("BoxShape3D_ftvsn")
+
+[node name="InteractComponent" parent="Environment/Table2" instance=ExtResource("3_fp761")]
+
 [node name="Floor" type="StaticBody3D" parent="Environment"]
-visible = false
+collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Floor"]
 material_override = SubResource("StandardMaterial3D_1nxsf")
@@ -142,3 +165,4 @@ shape = SubResource("BoxShape3D_i0nqc")
 script = ExtResource("4_yl3pc")
 
 [connection signal="interact" from="Player" to="Environment/Table/InteractComponent" method="_on_player_interact"]
+[connection signal="looking_at" from="Player" to="Environment/Table/InteractComponent" method="_on_player_looking_at"]
