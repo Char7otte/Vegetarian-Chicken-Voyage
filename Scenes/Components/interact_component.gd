@@ -13,4 +13,4 @@ func _on_player_looking_at():
 	if has_interacted == true:
 		return
 	
-	print("Looking at" + name)
+	print("Looking at: " + name)
