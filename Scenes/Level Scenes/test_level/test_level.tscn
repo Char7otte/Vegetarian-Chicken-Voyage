@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://627r7skgst5t"]
 
-[ext_resource type="PackedScene" uid="uid://bqvx0lhdtah01" path="res://Assets/Offline/Models/Coffee Table/table_godot.blend" id="2_a2dfd"]
+[ext_resource type="PackedScene" uid="uid://bdh88yf7pubvi" path="res://Assets/Offline/Models/Coffee Table/table_godot.blend" id="2_a2dfd"]
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://Assets/Offline/Materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://Scenes/Object Scenes/player/player.tscn" id="2_llmoq"]
 [ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/Debug.gd" id="4_yl3pc"]
@@ -27,23 +27,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 [node name="Table" type="StaticBody3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3.36463)
 
+[node name="table_godot" parent="Environment/Table" instance=ExtResource("2_a2dfd")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.024477, 4.76837e-07, 0.95348)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Table"]
 shape = SubResource("BoxShape3D_ftvsn")
 
-[node name="table_godot" parent="Environment/Table" instance=ExtResource("2_a2dfd")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-
 [node name="Floor" type="StaticBody3D" parent="Environment"]
-metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Floor"]
 material_override = SubResource("StandardMaterial3D_1nxsf")
 mesh = SubResource("BoxMesh_0baw4")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor"]
 shape = SubResource("BoxShape3D_i0nqc")
-metadata/_edit_lock_ = true
 
 [node name="Debug" type="Node" parent="."]
 script = ExtResource("4_yl3pc")
