@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+signal looking_at
 signal interact
 
 @export var player_speed: float
@@ -21,8 +22,7 @@ func _process(_delta):
 	#rotates the player accordingly with the camera
 	
 	if interact_raycast.is_colliding():
-		var collided_object = interact_raycast.get_collider()
-		print(collided_object)
+		looking_at.emit()
 		
 		if Input.is_action_just_pressed("interact"):
 			interact.emit()
