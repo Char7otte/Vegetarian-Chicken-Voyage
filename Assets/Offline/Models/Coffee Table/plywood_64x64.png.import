@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbw3bqnqw5e2f"
-path.s3tc="res://.godot/imported/plywood_64x64.png-8b03f7ca86c4af069c239c6e0dcd8e21.s3tc.ctex"
+path.s3tc="res://.godot/imported/plywood_64x64.png-13035dd1adc129cb97bccea7ec92e979.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Offline/Models/Coffee Table/Blender/plywood_64x64.png"
-dest_files=["res://.godot/imported/plywood_64x64.png-8b03f7ca86c4af069c239c6e0dcd8e21.s3tc.ctex"]
+source_file="res://Assets/Offline/Models/Coffee Table/plywood_64x64.png"
+dest_files=["res://.godot/imported/plywood_64x64.png-13035dd1adc129cb97bccea7ec92e979.s3tc.ctex"]
 
 [params]
 
