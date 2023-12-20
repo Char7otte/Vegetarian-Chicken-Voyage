@@ -1,6 +1,6 @@
-extends StaticBody3D
+extends Node
 class_name InteractComponent
 
-func interacted():
-	print("Interacted with " + get_parent().name)
-	queue_free()
+
+func _on_player_interact():
+	print("Interacted with: " + name)

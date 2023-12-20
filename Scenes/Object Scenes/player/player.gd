@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal interact
+
 @export var player_speed: float
 @export var mouse_sensitivity: float
 
@@ -19,8 +21,12 @@ func _process(_delta):
 	#rotates the player accordingly with the camera
 	
 	if interact_raycast.is_colliding():
-		var collided_collision_node = interact_raycast.get_collider()
-		print(collided_collision_node)
+		var collided_object = interact_raycast.get_collider()
+		print(collided_object)
+		
+		if Input.is_action_just_pressed("interact"):
+			interact.emit()
+			interact_raycast.set_enabled(false)
 
 
 func _physics_process(_delta):
