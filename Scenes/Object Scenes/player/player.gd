@@ -26,7 +26,6 @@ func _process(_delta):
 		
 		if Input.is_action_just_pressed("interact"):
 			interact.emit()
-			interact_raycast.set_enabled(false)
 
 
 func _physics_process(_delta):

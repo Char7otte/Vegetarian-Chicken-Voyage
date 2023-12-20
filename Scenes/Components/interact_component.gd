@@ -1,11 +1,16 @@
 extends Node
 class_name InteractComponent
 
+var has_interacted = false
+
 
 func _on_player_interact():
-	print("")
+	has_interacted = true
 	print("Interacted with: " + name)
 
 
 func _on_player_looking_at():
-	print("Looking at: " + name)
+	if has_interacted == true:
+		return
+	
+	print("Looking at" + name)
