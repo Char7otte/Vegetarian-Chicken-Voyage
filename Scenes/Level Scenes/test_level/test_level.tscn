@@ -126,7 +126,8 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.274414, 0.00634766)
 shape = SubResource("BoxShape3D_ftvsn")
 
-[node name="InteractComponent" parent="Environment/Table" instance=ExtResource("3_fp761")]
+[node name="InteractComponent" parent="Environment/Table" node_paths=PackedStringArray("player_interact_raycast") instance=ExtResource("3_fp761")]
+player_interact_raycast = NodePath("../../../Player/PlayerCamera/InteractRaycast")
 
 [node name="Table2" type="StaticBody3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, -0.992364, -0.123342, 0, 0.123342, -0.992364, 0, 1, 5.07353)
@@ -149,7 +150,8 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.274414, 0.00634766)
 shape = SubResource("BoxShape3D_ftvsn")
 
-[node name="InteractComponent" parent="Environment/Table2" instance=ExtResource("3_fp761")]
+[node name="InteractComponent" parent="Environment/Table2" node_paths=PackedStringArray("player_interact_raycast") instance=ExtResource("3_fp761")]
+player_interact_raycast = NodePath("../../../Player/PlayerCamera/InteractRaycast")
 
 [node name="Floor" type="StaticBody3D" parent="Environment"]
 collision_mask = 0
@@ -164,5 +166,4 @@ shape = SubResource("BoxShape3D_i0nqc")
 [node name="Debug" type="Node" parent="."]
 script = ExtResource("4_yl3pc")
 
-[connection signal="interact" from="Player" to="Environment/Table/InteractComponent" method="_on_player_interact"]
-[connection signal="looking_at" from="Player" to="Environment/Table/InteractComponent" method="_on_player_looking_at"]
+[editable path="Player"]

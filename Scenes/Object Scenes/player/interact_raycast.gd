@@ -1,4 +1,5 @@
 extends RayCast3D
+class_name PlayerInteractRaycast
 
 signal looking_at
 signal interact
