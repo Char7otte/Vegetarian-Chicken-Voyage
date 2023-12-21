@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://627r7skgst5t"]
+[gd_scene load_steps=14 format=3 uid="uid://627r7skgst5t"]
 
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://Assets/Offline/Materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://Scenes/Object Scenes/player/player.tscn" id="2_llmoq"]
@@ -21,6 +21,13 @@ size = Vector3(20, 1, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n34tp"]
 size = Vector3(2.16709, 3.38684, 0.782713)
+
+[sub_resource type="Environment" id="Environment_wpxeo"]
+background_mode = 1
+background_color = Color(0.592157, 0.027451, 0.396078, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_agrq8"]
+exposure_multiplier = 1.871
 
 [node name="TestLevel" type="Node3D"]
 
@@ -86,6 +93,10 @@ metadata/_edit_lock_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.999991, -0.00425899, 0.000386614, 0.00334957, 0.836242, 0.54835, -0.00265872, -0.548344, 0.836249, 0, 4.77291, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wpxeo")
+camera_attributes = SubResource("CameraAttributesPractical_agrq8")
 
 [node name="Debug" type="Node" parent="."]
 script = ExtResource("5_m4tnp")
