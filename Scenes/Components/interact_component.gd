@@ -8,7 +8,7 @@ func on_player_looking_at():
 	if has_interacted == true:
 		return
 	
-	print("Looking at: " + name)
+	print("Looking at: " + get_parent().name)
 
 
 func on_player_interact():
@@ -16,7 +16,7 @@ func on_player_interact():
 		return
 	
 	has_interacted = true
-	print("Interacted with: " + name)
+	print("Interacted with: " + get_parent().name)
 
 
 
