@@ -20,11 +20,12 @@ size = Vector3(20, 1, 20)
 size = Vector3(20, 1, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n34tp"]
-size = Vector3(2.14191, 3.44821, 0.800476)
+size = Vector3(2.16709, 3.38684, 0.782713)
 
 [node name="TestLevel" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_llmoq")]
+metadata/_edit_lock_ = true
 
 [node name="Environment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
@@ -34,10 +35,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.88271)
 collision_layer = 3
 
 [node name="table_godot2" parent="Environment/Table" instance=ExtResource("2_vmk3q")]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.274414, 0.00634766)
 shape = SubResource("BoxShape3D_ftvsn")
+metadata/_edit_lock_ = true
 
 [node name="InteractComponent" parent="Environment/Table" instance=ExtResource("3_fp761")]
 
@@ -46,36 +49,43 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 1, 
 collision_layer = 3
 
 [node name="table_godot2" parent="Environment/Table2" instance=ExtResource("2_vmk3q")]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Table2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.274414, 0.00634766)
 shape = SubResource("BoxShape3D_ftvsn")
+metadata/_edit_lock_ = true
 
 [node name="InteractComponent" parent="Environment/Table2" instance=ExtResource("3_fp761")]
 
 [node name="Floor" type="StaticBody3D" parent="Environment"]
 collision_mask = 0
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Floor"]
 material_override = SubResource("StandardMaterial3D_1nxsf")
 mesh = SubResource("BoxMesh_0baw4")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor"]
 shape = SubResource("BoxShape3D_i0nqc")
-
-[node name="Debug" type="Node" parent="Environment"]
-script = ExtResource("5_m4tnp")
+metadata/_edit_lock_ = true
 
 [node name="Bookshelf" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37243, 2.20134, -3.56193)
+transform = Transform3D(0.780441, 0, 0.625229, 0, 1, 0, -0.625229, 0, 0.780441, -5.17822, 2.20134, -1.1485)
 collision_layer = 3
 
 [node name="bookshelf" parent="Environment/Bookshelf" instance=ExtResource("6_6vso0")]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Bookshelf"]
 shape = SubResource("BoxShape3D_n34tp")
+metadata/_edit_lock_ = true
 
 [node name="InteractComponent" parent="Environment/Bookshelf" instance=ExtResource("3_fp761")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.836458, 0.54803, 0, -0.54803, 0.836458, 0, 4.77291, 0)
+transform = Transform3D(0.999991, -0.00425899, 0.000386614, 0.00334957, 0.836242, 0.54835, -0.00265872, -0.548344, 0.836249, 0, 4.77291, 0)
+
+[node name="Debug" type="Node" parent="."]
+script = ExtResource("5_m4tnp")
