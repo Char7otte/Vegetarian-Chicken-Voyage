@@ -1,6 +1,22 @@
-extends StaticBody3D
+extends Node
 class_name InteractComponent
 
-func interacted():
-	print("Interacted with " + get_parent().name)
-	queue_free()
+var has_interacted = false
+
+
+func on_player_looking_at():
+	if has_interacted == true:
+		return
+	
+	print("Looking at: " + name)
+
+
+func on_player_interact():
+	if has_interacted == true:
+		return
+	
+	has_interacted = true
+	print("Interacted with: " + name)
+
+
+
