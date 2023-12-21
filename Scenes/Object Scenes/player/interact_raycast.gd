@@ -4,7 +4,6 @@ class_name PlayerInteractRaycast
 var colliding_object
 var colliding_object_interact_component
 
-
 func _process(_delta):
 	if is_colliding():
 		colliding_object = get_collider()
