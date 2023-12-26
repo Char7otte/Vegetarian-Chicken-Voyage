@@ -3,7 +3,6 @@ class_name InteractComponent
 
 var has_interacted = false
 
-
 func on_player_looking_at():
 	if has_interacted == true:
 		return
@@ -18,5 +17,8 @@ func on_player_interact():
 	has_interacted = true
 	print("Interacted with: " + get_parent().name)
 
+func disable_interaction():
+	get_parent().set_collision_layer_value(2, false)
+	queue_free()
 
 
