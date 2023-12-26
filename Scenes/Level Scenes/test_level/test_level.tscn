@@ -2,13 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://Assets/Offline/Materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://Scenes/Object Scenes/player/player.tscn" id="2_llmoq"]
-[ext_resource type="PackedScene" uid="uid://bdh88yf7pubvi" path="res://Assets/Offline/Models/Coffee Table/table_godot.blend" id="2_vmk3q"]
+[ext_resource type="PackedScene" uid="uid://bdrneaoo38e0l" path="res://Scenes/Object Scenes/coffee_table/table.tscn" id="3_8l675"]
 [ext_resource type="PackedScene" uid="uid://dqrad2a8anfn3" path="res://Scenes/Components/interact_component.tscn" id="3_fp761"]
 [ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/debug.gd" id="5_m4tnp"]
 [ext_resource type="PackedScene" uid="uid://bacntcv75qx8e" path="res://Assets/Offline/Models/Bookshelf/Temporary Location for Blender/bookshelf.blend" id="6_6vso0"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ftvsn"]
-size = Vector3(4.39252, 1.46265, 1.1748)
+[ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/task_manager.gd" id="7_6xa7q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nxsf"]
 albedo_texture = ExtResource("2_a3m2a")
@@ -24,34 +22,17 @@ size = Vector3(2.14191, 3.44821, 0.800476)
 
 [node name="TestLevel" type="Node3D"]
 
+[node name="Debug" type="Node" parent="."]
+script = ExtResource("5_m4tnp")
+
+[node name="TaskManager" type="Node" parent="." node_paths=PackedStringArray("objects_with_tasks")]
+script = ExtResource("7_6xa7q")
+objects_with_tasks = [NodePath("../Environment/Table"), NodePath("../Environment/Table2")]
+
 [node name="Player" parent="." instance=ExtResource("2_llmoq")]
 
 [node name="Environment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
-
-[node name="Table" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.88271)
-collision_layer = 3
-
-[node name="table_godot2" parent="Environment/Table" instance=ExtResource("2_vmk3q")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Table"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.274414, 0.00634766)
-shape = SubResource("BoxShape3D_ftvsn")
-
-[node name="InteractComponent" parent="Environment/Table" instance=ExtResource("3_fp761")]
-
-[node name="Table2" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 1, 5.07353)
-collision_layer = 3
-
-[node name="table_godot2" parent="Environment/Table2" instance=ExtResource("2_vmk3q")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Table2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.274414, 0.00634766)
-shape = SubResource("BoxShape3D_ftvsn")
-
-[node name="InteractComponent" parent="Environment/Table2" instance=ExtResource("3_fp761")]
 
 [node name="Floor" type="StaticBody3D" parent="Environment"]
 collision_mask = 0
@@ -63,8 +44,11 @@ mesh = SubResource("BoxMesh_0baw4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor"]
 shape = SubResource("BoxShape3D_i0nqc")
 
-[node name="Debug" type="Node" parent="Environment"]
-script = ExtResource("5_m4tnp")
+[node name="Table" parent="Environment" instance=ExtResource("3_8l675")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1749, -2.40252)
+
+[node name="Table2" parent="Environment" instance=ExtResource("3_8l675")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.175, -4.38399)
 
 [node name="Bookshelf" type="StaticBody3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37243, 2.20134, -3.56193)
