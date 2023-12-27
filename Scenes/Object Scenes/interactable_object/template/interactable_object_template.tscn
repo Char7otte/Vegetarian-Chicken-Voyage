@@ -5,7 +5,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_emvox"]
 
-[node name="Interactable Object" type="StaticBody3D"]
+[node name="MODEL NAME HERE" type="StaticBody3D"]
 collision_layer = 3
 
 [node name="InteractComponent" parent="." instance=ExtResource("1_w0cr5")]
