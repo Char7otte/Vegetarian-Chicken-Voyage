@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://Assets/Offline/Materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://Scenes/Object Scenes/player/player.tscn" id="2_llmoq"]
-[ext_resource type="PackedScene" uid="uid://bdrneaoo38e0l" path="res://Scenes/Object Scenes/coffee_table/table.tscn" id="3_8l675"]
+[ext_resource type="PackedScene" uid="uid://b3ca6o6dpn68d" path="res://Scenes/Object Scenes/interactable_object/coffee table/coffee_table.tscn" id="3_8l675"]
 [ext_resource type="PackedScene" uid="uid://dqrad2a8anfn3" path="res://Scenes/Components/interact_component.tscn" id="3_fp761"]
 [ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/debug.gd" id="5_m4tnp"]
 [ext_resource type="PackedScene" uid="uid://bpm1qiw5aj5cd" path="res://Assets/Offline/Models/Bookshelf/Temporary Location for Blender/bookshelf.blend" id="6_6vso0"]
@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.175, -4.38399)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37243, 2.20134, -3.56193)
 collision_layer = 3
 
-[node name="bookshelf" parent="Environment/Bookshelf" instance=ExtResource("6_6vso0")]
+[node name="Model" parent="Environment/Bookshelf" instance=ExtResource("6_6vso0")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Bookshelf"]
 shape = SubResource("BoxShape3D_n34tp")
