@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn7cywv2s0ix5"]
+
+[ext_resource type="PackedScene" uid="uid://dqrad2a8anfn3" path="res://Scenes/Components/interact_component.tscn" id="1_w0cr5"]
+[ext_resource type="PackedScene" uid="uid://kosas30wh7ad" path="res://Scenes/Components/task_component.tscn" id="2_j802h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_emvox"]
+
+[node name="Interactable Object" type="StaticBody3D"]
+collision_layer = 3
+
+[node name="InteractComponent" parent="." instance=ExtResource("1_w0cr5")]
+
+[node name="TaskComponent" parent="." instance=ExtResource("2_j802h")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_emvox")
+
+[node name="REPLACE WITH MODEL" type="Node3D" parent="."]
