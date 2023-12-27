@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbbkvgitv53vu"]
+
+[ext_resource type="PackedScene" uid="uid://dqrad2a8anfn3" path="res://Scenes/Components/interact_component.tscn" id="1_5txlg"]
+[ext_resource type="PackedScene" uid="uid://kosas30wh7ad" path="res://Scenes/Components/task_component.tscn" id="2_uhb1a"]
+[ext_resource type="PackedScene" uid="uid://bpm1qiw5aj5cd" path="res://Assets/Offline/Models/Bookshelf/Temporary Location for Blender/bookshelf.blend" id="3_dyvn5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_emvox"]
+size = Vector3(2.17603, 3.45313, 0.766541)
+
+[node name="Bookshelf" type="StaticBody3D"]
+collision_layer = 3
+
+[node name="InteractComponent" parent="." instance=ExtResource("1_5txlg")]
+
+[node name="TaskComponent" parent="." instance=ExtResource("2_uhb1a")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00427246, -0.0615234, 0.013092)
+shape = SubResource("BoxShape3D_emvox")
+
+[node name="bookshelf" parent="." instance=ExtResource("3_dyvn5")]
