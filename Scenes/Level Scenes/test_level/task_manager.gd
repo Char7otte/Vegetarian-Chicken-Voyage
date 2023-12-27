@@ -2,7 +2,6 @@ extends Node
 
 @export var objects_with_tasks: Array[StaticBody3D]
 
-#var number_of_tasks_to_generate: int
 var task_component: TaskComponent
 
 func _ready():
