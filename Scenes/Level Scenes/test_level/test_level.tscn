@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bdrneaoo38e0l" path="res://Scenes/Object Scenes/coffee_table/table.tscn" id="3_8l675"]
 [ext_resource type="PackedScene" uid="uid://dqrad2a8anfn3" path="res://Scenes/Components/interact_component.tscn" id="3_fp761"]
 [ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/debug.gd" id="5_m4tnp"]
-[ext_resource type="PackedScene" uid="uid://bacntcv75qx8e" path="res://Assets/Offline/Models/Bookshelf/Temporary Location for Blender/bookshelf.blend" id="6_6vso0"]
+[ext_resource type="PackedScene" uid="uid://bpm1qiw5aj5cd" path="res://Assets/Offline/Models/Bookshelf/Temporary Location for Blender/bookshelf.blend" id="6_6vso0"]
 [ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/task_manager.gd" id="7_6xa7q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nxsf"]
