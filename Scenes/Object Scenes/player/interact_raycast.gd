@@ -1,11 +1,9 @@
 extends RayCast3D
 class_name PlayerInteractRaycast
 
-var colliding_object_interact_component: InteractComponent
-
 func _process(_delta):
 	if is_colliding():
-		colliding_object_interact_component = get_collider().get_node("InteractComponent")
+		var colliding_object_interact_component = get_collider().get_node_or_null("InteractComponent")
 		if colliding_object_interact_component == null:
 			print("Error: Interact Component not found.")
 			return
