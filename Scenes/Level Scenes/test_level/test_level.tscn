@@ -22,7 +22,7 @@ script = ExtResource("5_m4tnp")
 
 [node name="TaskManager" type="Node" parent="." node_paths=PackedStringArray("objects_with_tasks")]
 script = ExtResource("7_6xa7q")
-objects_with_tasks = [NodePath("../Environment/Table"), NodePath("../Environment/Table2")]
+objects_with_tasks = [NodePath("../Environment/Table"), NodePath("../Environment/Table2"), NodePath("../Environment/Table3"), NodePath("../Environment/Table4"), NodePath("../Environment/Table5"), NodePath("../Environment/Table6")]
 
 [node name="Player" parent="." instance=ExtResource("2_llmoq")]
 
