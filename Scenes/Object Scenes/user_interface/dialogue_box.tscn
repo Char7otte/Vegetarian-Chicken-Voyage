@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://do0wm2eqacxe6"]
+
+[node name="Dialogue Box" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 0
+offset_top = 454.0
+offset_right = 1155.0
+offset_bottom = 648.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Container"]
+layout_mode = 2
+text = "Hi Honey! Slept well last night?"
