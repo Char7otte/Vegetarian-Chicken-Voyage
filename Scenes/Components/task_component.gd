@@ -9,7 +9,5 @@ func _ready():
 		interact_component.disable_interaction()
 		return
 	
-	var parent_node = get_parent()
-	var object_model = parent_node.get_node("Model")
-	var animation_player = object_model.get_node("AnimationPlayer")
+	var animation_player = get_parent().get_node("Model").get_node("AnimationPlayer")
 	animation_player.play("Break Anim")
