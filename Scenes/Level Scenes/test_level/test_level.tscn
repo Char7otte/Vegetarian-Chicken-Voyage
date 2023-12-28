@@ -74,4 +74,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.17912, 1.175, -4.38399)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.836458, 0.54803, 0, -0.54803, 0.836458, 0, 4.77291, 0)
 
-[node name="Dialogue Box" parent="." instance=ExtResource("6_kujl7")]
+[node name="User Interface" type="CanvasLayer" parent="."]
+
+[node name="Dialogue Box" parent="User Interface" instance=ExtResource("6_kujl7")]
