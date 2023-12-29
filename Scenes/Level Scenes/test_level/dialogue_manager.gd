@@ -1,23 +1,11 @@
 extends Node
 
-#signal change_subtitle_label_text(new_text)
-#signal change_option_labels_text(option_element, new_text)
-
-#@export var dialogue_text_timer_wait_time: float
 @export var dialogue_box: PackedScene
 
-#@onready var dialogue_text_timer = $Timer
-
-#func emit_change_subtitle_label_text(new_text):
-	#change_subtitle_label_text.emit(new_text)
-	
-func change_subtitle_label_text(new_text):
-	dialogue_box.subtitle_label.text = new_text
-
-
-#func emit_change_option_labels_text(options_element, new_text):
-	#change_option_labels_text.emit(options_element, new_text)
-
 
 func change_subtitle_label_text(new_text):
 	dialogue_box.subtitle_label.text = new_text
+
+
+func change_option_label_text(option_element, new_text):
+	dialogue_box.option_labels[option_element].text = new_text

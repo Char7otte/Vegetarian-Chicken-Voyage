@@ -32,7 +32,6 @@ objects_with_tasks = [NodePath("../Environment/Table"), NodePath("../Environment
 
 [node name="DialogueManager" type="Node" parent="."]
 script = ExtResource("3_fxxpy")
-dialogue_text_timer_wait_time = 2.0
 
 [node name="Timer" type="Timer" parent="DialogueManager"]
 one_shot = true
@@ -86,6 +85,3 @@ transform = Transform3D(1, 0, 0, 0, 0.836458, 0.54803, 0, -0.54803, 0.836458, 0,
 
 [node name="Dialogue Box" parent="User Interface" instance=ExtResource("6_kujl7")]
 offset_left = 10.0
-
-[connection signal="change_option_labels_text" from="DialogueManager" to="User Interface/Dialogue Box" method="_on_dialogue_manager_change_option_labels_text"]
-[connection signal="change_subtitle_label_text" from="DialogueManager" to="User Interface/Dialogue Box" method="_on_dialogue_manager_change_subtitle_label_text"]
