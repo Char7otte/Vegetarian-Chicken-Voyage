@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdvktvaqtgtp7"
-path.s3tc="res://.godot/imported/marble_01_diff_4k.jpg-12fc8a15cf4ff5b5c02b4034c68e4c60.s3tc.ctex"
+uid="uid://drp2j0qgpj4s"
+path.s3tc="res://.godot/imported/dark_wood_diff_64x64.jpg-742d77959a5c159e3fbcb2a0b007c09b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Materials/marble_01_diff_4k.jpg"
-dest_files=["res://.godot/imported/marble_01_diff_4k.jpg-12fc8a15cf4ff5b5c02b4034c68e4c60.s3tc.ctex"]
+source_file="res://Assets/Offline/Models/Bookshelf/Temporary Location for Blender/dark_wood_diff_64x64.jpg"
+dest_files=["res://.godot/imported/dark_wood_diff_64x64.jpg-742d77959a5c159e3fbcb2a0b007c09b.s3tc.ctex"]
 
 [params]
 
