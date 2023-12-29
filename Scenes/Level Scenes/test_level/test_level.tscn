@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://627r7skgst5t"]
+[gd_scene load_steps=13 format=3 uid="uid://627r7skgst5t"]
 
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://Assets/Materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://Scenes/Object Scenes/player/player.tscn" id="2_llmoq"]
 [ext_resource type="PackedScene" uid="uid://b3ca6o6dpn68d" path="res://Scenes/Object Scenes/interactable_object/coffee table/coffee_table.tscn" id="3_8l675"]
+[ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/dialogue_manager.gd" id="3_fxxpy"]
 [ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/debug.gd" id="5_m4tnp"]
 [ext_resource type="PackedScene" uid="uid://do0wm2eqacxe6" path="res://Scenes/Object Scenes/user_interface/dialogue_box.tscn" id="6_kujl7"]
 [ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/task_manager.gd" id="7_6xa7q"]
@@ -28,6 +29,12 @@ script = ExtResource("5_m4tnp")
 [node name="TaskManager" type="Node" parent="." node_paths=PackedStringArray("objects_with_tasks")]
 script = ExtResource("7_6xa7q")
 objects_with_tasks = [NodePath("../Environment/Table"), NodePath("../Environment/Table2"), NodePath("../Environment/Table3"), NodePath("../Environment/Table4"), NodePath("../Environment/Table5"), NodePath("../Environment/Table6")]
+
+[node name="DialogueManager" type="Node" parent="."]
+script = ExtResource("3_fxxpy")
+
+[node name="Timer" type="Timer" parent="DialogueManager"]
+one_shot = true
 
 [node name="Player" parent="." instance=ExtResource("2_llmoq")]
 
@@ -78,3 +85,6 @@ transform = Transform3D(1, 0, 0, 0, 0.836458, 0.54803, 0, -0.54803, 0.836458, 0,
 
 [node name="Dialogue Box" parent="User Interface" instance=ExtResource("6_kujl7")]
 offset_left = 10.0
+
+[connection signal="change_option_labels_text" from="DialogueManager" to="User Interface/Dialogue Box" method="_on_dialogue_manager_change_option_labels_text"]
+[connection signal="change_subtitle_label_text" from="DialogueManager" to="User Interface/Dialogue Box" method="_on_dialogue_manager_change_subtitle_label_text"]
