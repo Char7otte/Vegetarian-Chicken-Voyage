@@ -32,6 +32,7 @@ objects_with_tasks = [NodePath("../Environment/Table"), NodePath("../Environment
 
 [node name="DialogueManager" type="Node" parent="."]
 script = ExtResource("3_fxxpy")
+dialogue_text_timer_wait_time = 2.0
 
 [node name="Timer" type="Timer" parent="DialogueManager"]
 one_shot = true
