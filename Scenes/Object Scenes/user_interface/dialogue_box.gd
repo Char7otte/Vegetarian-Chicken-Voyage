@@ -1,11 +1,17 @@
 extends Control
 
+@onready var option_labels_parent = %OptionLabels
 @onready var subtitle_label = %SubtitleLabel
-@onready var option_labels = [%Option1, %Option2, %Option3]
 
-func change_subtitle_label_text(new_subtitle_text):
-	subtitle_label.text = new_subtitle_text
+var option_labels: Array
+
+func _ready():
+	option_labels = option_labels_parent.get_children()
 
 
-func change_options_label_text(option_element, new_option_text):
-	option_labels[option_element].text = new_option_text
+func _on_dialogue_manager_change_subtitle_label_text(new_text):
+	subtitle_label.text = new_text
+
+
+func _on_dialogue_manager_change_option_labels_text(options_element, new_text):
+	option_labels[options_element] = new_text
