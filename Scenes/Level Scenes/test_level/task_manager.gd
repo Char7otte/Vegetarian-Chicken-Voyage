@@ -13,8 +13,6 @@ func _ready():
 		random_number = randi_range(0, 1)
 		
 		if random_number == 0:
-			print("Skipping: " + object.name)
 			task_component.deactivate_interaction()
 		else: 
-			print("Activating: " + object.name)
 			task_component.activate_interaction()

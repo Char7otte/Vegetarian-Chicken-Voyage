@@ -8,7 +8,5 @@ func _process(_delta):
 			print("Error: Interact Component not found.")
 			return
 		
-		colliding_object_interact_component.on_player_looking_at()
-		
 		if Input.is_action_just_pressed("interact"):
 			colliding_object_interact_component.on_player_interact()
