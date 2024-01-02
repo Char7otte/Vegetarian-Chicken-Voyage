@@ -6,10 +6,8 @@ extends Node
 func _ready():
 	print("Started")
 	
-	dialogue_text_timer.start()
-	await dialogue_text_timer.timeout
-	
-	tutorial_dialogue()
+	await get_tree().create_timer(0.1).timeout
+	await tutorial_dialogue()
 	
 	print("Finished")
 
