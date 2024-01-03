@@ -4,30 +4,33 @@ signal make_option_labels_invisible
 signal make_option_labels_visible
 
 @onready var dialogue_text_timer = $Timer
+
 @onready var dialogue_box = %DialogueBox
 
-#var current_subtitle: String
-#var current_option_1: String
-#var current_option_2: String
-#var current_option_3: String
-#
-#var new_subtitle: String
-#var new_option_1: String
-#var new_option_2: String
-#var new_option_3: String
-#
-#var dialogue_options_dictionary = { 
-	#current_subtitle : new_subtitle,
-	#current_option_1 : new_option_1, 
-	#current_option_2 : new_option_2,
-	#current_option_3 : new_option_3
-	#}
+var dialogue_lines_0 = [
+	"Hello, Honey!", 
+	"How was your sleep?"
+]
+
+var dialogue_lines_1 = [
+	"Here are what needs doing today in the house:",
+	"TASK 1 HERE",
+	"TASK 2 HERE",
+	"TASK 3 HERE"
+]
+
+var dialogue_lines_count = 0
+var dialogue_lines_dictionary = {
+	0 : dialogue_lines_0,
+	1 : dialogue_lines_1
+}
 
 func _ready():
 	await get_tree().create_timer(0.1).timeout
 	
-	var tutorial_dialogue_lines = ["Hello, Honey!", "How was your sleep?"]
-	start_dialogue(tutorial_dialogue_lines)
+	dialogue_box.option_selected.connect(on_option_selected)
+	
+	change_dialogue_lines()
 
 
 func start_dialogue(dialogue_lines):
@@ -39,3 +42,12 @@ func start_dialogue(dialogue_lines):
 	
 	print("DIALOGUE FINISHED\n===")
 	make_option_labels_visible.emit()
+
+
+func change_dialogue_lines():
+	start_dialogue(dialogue_lines_dictionary[dialogue_lines_count])
+
+
+func on_option_selected():
+	dialogue_lines_count += 1
+	change_dialogue_lines()

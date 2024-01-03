@@ -1,5 +1,7 @@
 extends Control
 
+signal option_selected
+
 @onready var option_labels_parent = %OptionLabels
 @onready var subtitle_label = %SubtitleLabel
 @onready var subtitle_scroll_speed_timer = %SubtitleTextScrollSpeedTimer
@@ -20,6 +22,7 @@ func _process(_delta):
 	if option_labels_parent.visible:
 		if Input.is_action_just_pressed("talk_option_one"):
 			print("Dialogue option 1 selected.")
+			option_selected.emit()
 		if Input.is_action_just_pressed("talk_option_two"):
 			print("Dialogue option 2 selected.")
 		if Input.is_action_just_pressed("talk_option_three"):
@@ -29,6 +32,7 @@ func _process(_delta):
 func change_subtitle_label_text(new_text):
 	subtitle_label.text = new_text
 	print(new_text)
+	
 	subtitle_scroll_speed_timer.start()
 	await subtitle_scroll_speed_timer.timeout
 
