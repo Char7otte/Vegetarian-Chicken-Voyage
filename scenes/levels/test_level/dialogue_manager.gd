@@ -3,9 +3,6 @@ extends Node
 signal make_option_labels_invisible
 signal make_option_labels_visible
 
-#@export var dialogue_lines_dictionary = {}
-#@export var dialogue_lines_0 = []
-#@export var dialogue_lines_1 = []
 
 @onready var dialogue_box = %DialogueBox
 
