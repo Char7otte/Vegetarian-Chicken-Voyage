@@ -3,7 +3,6 @@ extends Node
 signal make_option_labels_invisible
 signal make_option_labels_visible
 
-
 @onready var dialogue_box = %DialogueBox
 
 var dialogue_lines_0 = [
