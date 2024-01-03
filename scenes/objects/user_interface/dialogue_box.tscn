@@ -49,3 +49,7 @@ text = "3) Option 3"
 [node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="SubtitleTextScrollSpeedTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0

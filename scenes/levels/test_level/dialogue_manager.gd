@@ -1,28 +1,24 @@
 extends Node
 
+signal make_option_labels_visible
+signal make_option_labels_invisible
+
 @onready var dialogue_text_timer = $Timer
 @onready var dialogue_box = %DialogueBox
 
 func _ready():
 	await get_tree().create_timer(0.1).timeout
-	await tutorial_dialogue()
-
-
-func change_subtitle_label_text(new_text):
-	dialogue_box.subtitle_label.text = new_text
 	
-	print(new_text)
+	var tutorial_dialogue_lines = ["Hello, Honey!", "How was your sleep?"]
+	start_dialogue(tutorial_dialogue_lines)
+
+
+func start_dialogue(dialogue_lines):
+	make_option_labels_invisible.emit()
+	print("=== \nDIALOGUE STARTED")
 	
-	dialogue_text_timer.start()
-	await dialogue_text_timer.timeout
-
-
-func change_option_label_text(option_element, new_text):
-	dialogue_box.option_labels[option_element].text = new_text
-
-
-func tutorial_dialogue():
-	print("=== \nStarted tutorial dialogue")
-	await change_subtitle_label_text("Good morning, Honey!")
-	await change_subtitle_label_text("How was your sleep?")
-	print("Finished tutorial dialogue\n===")
+	for line in dialogue_lines:
+		await dialogue_box.change_subtitle_label_text(line)
+	
+	print("DIALOGUE FINISHED\n===")
+	make_option_labels_visible.emit()
