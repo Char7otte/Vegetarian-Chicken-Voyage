@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdvktvaqtgtp7"
-path.s3tc="res://.godot/imported/marble_01_diff_4k.jpg-12fc8a15cf4ff5b5c02b4034c68e4c60.s3tc.ctex"
+path.s3tc="res://.godot/imported/marble_01_diff_4k.jpg-1f51bdd89884ba14fe5d4eb594b1a2ba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Materials/marble_01_diff_4k.jpg"
-dest_files=["res://.godot/imported/marble_01_diff_4k.jpg-12fc8a15cf4ff5b5c02b4034c68e4c60.s3tc.ctex"]
+source_file="res://assets/materials/marble_01_diff_4k.jpg"
+dest_files=["res://.godot/imported/marble_01_diff_4k.jpg-1f51bdd89884ba14fe5d4eb594b1a2ba.s3tc.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfjbgqhg5noy8"
-path="res://.godot/imported/dark_wood_diff_4k.jpg-919e820e6a3abb8b47673c99b3bd46fc.ctex"
+path="res://.godot/imported/dark_wood_diff_4k.jpg-efb7d2c69f66ac9613b9289057e1680f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Bookshelf/Temporary Location for Blender/dark_wood_diff_4k.jpg"
-dest_files=["res://.godot/imported/dark_wood_diff_4k.jpg-919e820e6a3abb8b47673c99b3bd46fc.ctex"]
+source_file="res://assets/models/bookshelf/Temporary Location for Blender/dark_wood_diff_4k.jpg"
+dest_files=["res://.godot/imported/dark_wood_diff_4k.jpg-efb7d2c69f66ac9613b9289057e1680f.ctex"]
 
 [params]
 

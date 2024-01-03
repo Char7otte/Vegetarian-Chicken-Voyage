@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqrad2a8anfn3"]
 
-[ext_resource type="Script" path="res://Scenes/Components/interact_component.gd" id="1_vbetv"]
+[ext_resource type="Script" path="res://scenes/components/interact_component.gd" id="1_tewi7"]
 
 [node name="InteractComponent" type="Node"]
-script = ExtResource("1_vbetv")
+script = ExtResource("1_tewi7")

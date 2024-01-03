@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://3cxbj1raq42l"
-path="res://.godot/imported/Glass cup fix.wav-e4df1f867f357c33e891e29b641b6464.sample"
+path="res://.godot/imported/Glass cup fix.wav-0aa417584ceef4e9b319a8ea944b1048.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/Coffee Table/Glass cup fix.wav"
-dest_files=["res://.godot/imported/Glass cup fix.wav-e4df1f867f357c33e891e29b641b6464.sample"]
+source_file="res://assets/audio/sfx/coffee_table/Glass cup fix.wav"
+dest_files=["res://.godot/imported/Glass cup fix.wav-0aa417584ceef4e9b319a8ea944b1048.sample"]
 
 [params]
 

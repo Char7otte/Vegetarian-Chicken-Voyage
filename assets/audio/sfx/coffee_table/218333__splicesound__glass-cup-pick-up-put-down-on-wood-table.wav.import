@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bes887bp4t0w7"
-path="res://.godot/imported/218333__splicesound__glass-cup-pick-up-put-down-on-wood-table.wav-156534f17d1a562d6a435f1e66e3969e.sample"
+path="res://.godot/imported/218333__splicesound__glass-cup-pick-up-put-down-on-wood-table.wav-9b3aa966136784d738f7944740c63f0f.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/Coffee Table/218333__splicesound__glass-cup-pick-up-put-down-on-wood-table.wav"
-dest_files=["res://.godot/imported/218333__splicesound__glass-cup-pick-up-put-down-on-wood-table.wav-156534f17d1a562d6a435f1e66e3969e.sample"]
+source_file="res://assets/audio/sfx/coffee_table/218333__splicesound__glass-cup-pick-up-put-down-on-wood-table.wav"
+dest_files=["res://.godot/imported/218333__splicesound__glass-cup-pick-up-put-down-on-wood-table.wav-9b3aa966136784d738f7944740c63f0f.sample"]
 
 [params]
 

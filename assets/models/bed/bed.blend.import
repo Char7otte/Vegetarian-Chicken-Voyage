@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpm1qiw5aj5cd"
-path="res://.godot/imported/bookshelf.blend-30a9af72ddbf54ccdb6ab6f2688d3233.scn"
+uid="uid://bhf23lmo1mbp8"
+path="res://.godot/imported/bed.blend-61ed9d802e74bfc8e18ee6e207fe4bac.scn"
 
 [deps]
 
-source_file="res://assets/models/bookshelf/Temporary Location for Blender/bookshelf.blend"
-dest_files=["res://.godot/imported/bookshelf.blend-30a9af72ddbf54ccdb6ab6f2688d3233.scn"]
+source_file="res://assets/models/bed/bed.blend"
+dest_files=["res://.godot/imported/bed.blend-61ed9d802e74bfc8e18ee6e207fe4bac.scn"]
 
 [params]
 

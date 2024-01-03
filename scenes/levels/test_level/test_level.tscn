@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://627r7skgst5t"]
 
-[ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://Assets/Materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
-[ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://Scenes/Object Scenes/player/player.tscn" id="2_llmoq"]
-[ext_resource type="PackedScene" uid="uid://b3ca6o6dpn68d" path="res://Scenes/Object Scenes/interactable_object/coffee table/coffee_table.tscn" id="3_8l675"]
-[ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/dialogue_manager.gd" id="3_fxxpy"]
-[ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/debug.gd" id="5_m4tnp"]
-[ext_resource type="PackedScene" uid="uid://do0wm2eqacxe6" path="res://Scenes/Object Scenes/user_interface/dialogue_box.tscn" id="6_kujl7"]
-[ext_resource type="Script" path="res://Scenes/Level Scenes/test_level/task_manager.gd" id="7_6xa7q"]
+[ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://assets/materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
+[ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://scenes/objects/player/player.tscn" id="2_llmoq"]
+[ext_resource type="PackedScene" uid="uid://b3ca6o6dpn68d" path="res://scenes/objects/interactable_object/coffee table/coffee_table.tscn" id="3_8l675"]
+[ext_resource type="Script" path="res://scenes/levels/test_level/dialogue_manager.gd" id="3_fxxpy"]
+[ext_resource type="Script" path="res://scenes/levels/test_level/debug.gd" id="5_m4tnp"]
+[ext_resource type="PackedScene" uid="uid://do0wm2eqacxe6" path="res://scenes/objects/user_interface/dialogue_box.tscn" id="6_kujl7"]
+[ext_resource type="Script" path="res://scenes/levels/test_level/task_manager.gd" id="7_6xa7q"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ulfwr"]
 

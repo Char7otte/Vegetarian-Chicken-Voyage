@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpm1qiw5aj5cd"
-path="res://.godot/imported/bookshelf.blend-30a9af72ddbf54ccdb6ab6f2688d3233.scn"
+uid="uid://dog1vkg4ywwgv"
+path="res://.godot/imported/night stand.blend-5decde962770081b5aa0e6d6f784c789.scn"
 
 [deps]
 
-source_file="res://assets/models/bookshelf/Temporary Location for Blender/bookshelf.blend"
-dest_files=["res://.godot/imported/bookshelf.blend-30a9af72ddbf54ccdb6ab6f2688d3233.scn"]
+source_file="res://assets/models/night_stand/night stand.blend"
+dest_files=["res://.godot/imported/night stand.blend-5decde962770081b5aa0e6d6f784c789.scn"]
 
 [params]
 
