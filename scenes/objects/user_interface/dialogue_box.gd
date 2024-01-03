@@ -8,6 +8,18 @@ var option_labels: Array
 
 func _ready():
 	option_labels = option_labels_parent.get_children()
+
+
+func _process(_delta):
+	if option_labels_parent.visible:
+		if Input.is_action_just_pressed("talk_option_one"):
+			print("Dialogue option 1 selected.")
+		if Input.is_action_just_pressed("talk_option_two"):
+			print("Dialogue option 2 selected.")
+		if Input.is_action_just_pressed("talk_option_three"):
+			print("Dialogue option 3 selected.")
+
+
 func change_subtitle_label_text(new_text):
 	subtitle_label.text = new_text
 	print(new_text)
