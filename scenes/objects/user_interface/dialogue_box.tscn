@@ -21,14 +21,14 @@ offset_bottom = 235.0
 [node name="SubtitleLabel" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Hey Honey!"
+text = "SPEAKER TEXT HERE"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+text = "                                                                                                                   "
 
 [node name="OptionLabels" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -36,24 +36,15 @@ layout_mode = 2
 
 [node name="Option1" type="Label" parent="VBoxContainer/HBoxContainer/OptionLabels"]
 layout_mode = 2
-text = "1) Hello."
+text = "1) Option 1"
 
 [node name="Option2" type="Label" parent="VBoxContainer/HBoxContainer/OptionLabels"]
 layout_mode = 2
-text = "2) Good morning!"
+text = "2) Option 2"
 
 [node name="Option3" type="Label" parent="VBoxContainer/HBoxContainer/OptionLabels"]
 layout_mode = 2
-text = "3) Where my sandwitch "
-
-[node name="Spacer" type="Label" parent="VBoxContainer/HBoxContainer/OptionLabels"]
-visible = false
-layout_mode = 2
-text = "4) Hello! ma baby, Hello! Ma honey, Hello! ma ragtime gal
-Send me a kiss by wire, baby my heart's on fire!
-If you refuse me, Honey, you'll lose me, then you'll be left alone;
-Oh baby, telephone and tell me I'm your own.
-Hello! Hello! Hello! Hello there.                                                                                                                                     "
+text = "3) Option 3"
 
 [node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
