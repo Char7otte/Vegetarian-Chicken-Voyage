@@ -5,9 +5,15 @@ extends Control
 @onready var subtitle_scroll_speed_timer = %SubtitleTextScrollSpeedTimer
 
 var option_labels: Array
+var dialogue_manager: Node
 
 func _ready():
 	option_labels = option_labels_parent.get_children()
+	on_dialogue_manager_make_option_labels_invisible()
+	
+	dialogue_manager = get_parent().get_parent().get_node("DialogueManager")
+	dialogue_manager.make_option_labels_invisible.connect(on_dialogue_manager_make_option_labels_invisible)
+	dialogue_manager.make_option_labels_visible.connect(on_dialogue_manager_make_option_labels_visible)
 
 
 func _process(_delta):
@@ -36,9 +42,9 @@ func change_option_label_text(new_option_label_1_text, new_option_label_2_text, 
 	print("3: " + new_option_label_3_text)
 
 
-func _on_dialogue_manager_make_option_labels_invisible():
+func on_dialogue_manager_make_option_labels_invisible():
 	option_labels_parent.set_visible(false)
 
 
-func _on_dialogue_manager_make_option_labels_visible():
+func on_dialogue_manager_make_option_labels_visible():
 	option_labels_parent.set_visible(true)
