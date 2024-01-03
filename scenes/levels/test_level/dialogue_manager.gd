@@ -3,7 +3,6 @@ extends Node
 signal make_option_labels_invisible
 signal make_option_labels_visible
 
-@onready var dialogue_text_timer = $Timer
 
 @onready var dialogue_box = %DialogueBox
 
