@@ -6,6 +6,23 @@ signal make_option_labels_invisible
 @onready var dialogue_text_timer = $Timer
 @onready var dialogue_box = %DialogueBox
 
+#var current_subtitle: String
+#var current_option_1: String
+#var current_option_2: String
+#var current_option_3: String
+#
+#var new_subtitle: String
+#var new_option_1: String
+#var new_option_2: String
+#var new_option_3: String
+#
+#var dialogue_options_dictionary = { 
+	#current_subtitle : new_subtitle,
+	#current_option_1 : new_option_1, 
+	#current_option_2 : new_option_2,
+	#current_option_3 : new_option_3
+	#}
+
 func _ready():
 	await get_tree().create_timer(0.1).timeout
 	
