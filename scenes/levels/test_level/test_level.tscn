@@ -32,9 +32,6 @@ script = ExtResource("7_6xa7q")
 [node name="DialogueManager" type="Node" parent="."]
 script = ExtResource("3_fxxpy")
 
-[node name="Timer" type="Timer" parent="DialogueManager"]
-one_shot = true
-
 [node name="Player" parent="." instance=ExtResource("2_llmoq")]
 
 [node name="boywife" type="CharacterBody3D" parent="."]
