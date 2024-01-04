@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://djssjlt03qhte"]
+
+[sub_resource type="GDScript" id="GDScript_g2i7r"]
+script/source = "extends Resource
+class_name DialogueResource
+
+#Since typed dictionaries don't exist in Godot yet, I elected to create multiple resource files,
+#loading them in order into an array for each day. So, each resource should have subtitle text
+#and the following dialogue options for the player.
+
+@export var subtitle_text_array: PackedStringArray
+@export var dialogue_options: PackedStringArray
+"
+
+[resource]
+script = SubResource("GDScript_g2i7r")
+subtitle_text_array = PackedStringArray()
+dialogue_options = PackedStringArray()
