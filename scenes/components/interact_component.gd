@@ -7,7 +7,6 @@ func on_player_interact():
 	
 	disable_interaction()
 
-
 func disable_interaction():
 	get_parent().set_collision_layer_value(2, false)
 	queue_free()

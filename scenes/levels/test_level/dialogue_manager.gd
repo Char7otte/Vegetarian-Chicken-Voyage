@@ -11,7 +11,6 @@ var dialouge_progression: int
 var speaker_text: Array[PackedStringArray]
 var reply_options: Array[PackedStringArray]
 
-
 func _ready():
 	await get_tree().create_timer(0.1).timeout
 	
@@ -21,7 +20,6 @@ func _ready():
 	dialogue_box.option_selected.connect(on_option_selected)
 	
 	change_lines()
-
 
 func change_lines():
 	make_reply_labels_invisible.emit()
@@ -35,7 +33,6 @@ func change_lines():
 	
 	dialogue_box.change_replies_text(reply_options[dialouge_progression])
 	await dialogue_box.option_selected
-
 
 func on_option_selected():
 	dialouge_progression += 1
