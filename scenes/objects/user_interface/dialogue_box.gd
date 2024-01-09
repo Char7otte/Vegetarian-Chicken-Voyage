@@ -37,13 +37,14 @@ func change_subtitle_label_text(new_text):
 	await subtitle_scroll_speed_timer.timeout
 
 
-func change_option_label_text(new_option_label_1_text, new_option_label_2_text, new_option_label_3_text):
-	option_labels[0].text = new_option_label_1_text
-	option_labels[1].text = new_option_label_2_text
-	option_labels[2].text = new_option_label_3_text
-	print("1: " + new_option_label_1_text)
-	print("2: " + new_option_label_2_text)
-	print("3: " + new_option_label_3_text)
+func change_option_label_text(new_option_label_text_array):
+	option_labels[0].text = new_option_label_text_array[0]
+	option_labels[1].text = new_option_label_text_array[1]
+	option_labels[2].text = new_option_label_text_array[2]
+	print("1: " + option_labels[0].text)
+	print("2: " + option_labels[1].text)
+	print("3: " + option_labels[2].text)
+
 
 
 func on_dialogue_manager_make_option_labels_invisible():
