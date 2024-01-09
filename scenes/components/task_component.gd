@@ -1,6 +1,8 @@
 extends Node
 class_name TaskComponent
 
+@export var task_message: String
+
 func _ready():
 	get_parent().add_to_group("InteractableObjects")
 	print(get_parent().name + " added to group.")
