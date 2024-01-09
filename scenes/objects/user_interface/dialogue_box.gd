@@ -2,13 +2,12 @@ extends Control
 
 signal option_selected
 
-@export var dialogue_manager: Node
-
-var dialogue_manager: Node
 @onready var speaker_label = %SpeakerLabel
 @onready var speaker_speed_timer = %SpeakerSpeedTimer
 @onready var reply_labels_parent = %Replies
 @onready var reply_labels = %Replies.get_children()
+
+var dialogue_manager: Node
 
 func _ready():
 	make_reply_labels_invisible()
