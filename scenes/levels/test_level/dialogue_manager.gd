@@ -31,6 +31,9 @@ func change_lines():
 	
 	print("DIALOGUE FINISHED\n===")
 	
+	if reply_options[dialogue_progression].is_empty():
+		return
+	
 	make_reply_labels_visible.emit()
 	dialogue_box.change_replies_text(reply_options[dialogue_progression])
 	
