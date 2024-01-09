@@ -32,7 +32,7 @@ script = ExtResource("7_6xa7q")
 
 [node name="DialogueManager" type="Node" parent="."]
 script = ExtResource("3_fxxpy")
-dialogue_lines_resource = ExtResource("4_1wjae")
+dialogue_lines = ExtResource("4_1wjae")
 
 [node name="User Interface" type="CanvasLayer" parent="."]
 

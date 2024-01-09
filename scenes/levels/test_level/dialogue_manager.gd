@@ -1,47 +1,42 @@
 extends Node
 
-signal make_option_labels_invisible
-signal make_option_labels_visible
+signal make_reply_labels_invisible
+signal make_reply_labels_visible
 
-@export var dialogue_lines_resource: Resource
+@export var dialogue_lines: Resource
 
 @onready var dialogue_box = %DialogueBox
 
-var dialogue_lines_count = 0
-var subtitle_text_array: Array[PackedStringArray]
-var dialogue_options_array: Array[PackedStringArray]
+var dialouge_progression: int
+var speaker_text: Array[PackedStringArray]
+var reply_options: Array[PackedStringArray]
 
 
 func _ready():
 	await get_tree().create_timer(0.1).timeout
 	
-	subtitle_text_array = dialogue_lines_resource.subtitle_text_array
-	dialogue_options_array = dialogue_lines_resource.dialogue_options_array
+	speaker_text = dialogue_lines.speaker_text
+	reply_options = dialogue_lines.reply_options
 	
 	dialogue_box.option_selected.connect(on_option_selected)
 	
-	change_dialogue_lines()
+	change_lines()
 
 
-func change_dialogue_lines():
-	make_option_labels_invisible.emit()
+func change_lines():
+	make_reply_labels_invisible.emit()
 	print("=== \nDIALOGUE STARTED")
 	
-	for line in subtitle_text_array[dialogue_lines_count]:
-		await dialogue_box.change_subtitle_label_text(line)
+	for text in speaker_text[dialouge_progression]:
+		await dialogue_box.change_speaker_text(text)
 	
 	print("DIALOGUE FINISHED\n===")
-	make_option_labels_visible.emit()
+	make_reply_labels_visible.emit()
 	
-	change_dialogue_options()
+	dialogue_box.change_replies_text(reply_options[dialouge_progression])
 	await dialogue_box.option_selected
 
 
-func change_dialogue_options():
-	dialogue_box.change_option_label_text(dialogue_options_array[dialogue_lines_count])
-	pass
-
-
 func on_option_selected():
-	dialogue_lines_count += 1
-	change_dialogue_lines()
+	dialouge_progression += 1
+	change_lines()
