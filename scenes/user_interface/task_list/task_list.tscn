@@ -23,8 +23,8 @@ grow_horizontal = 0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "1: Clean the table spill"
+text = "1) "
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "2: 1231231"
+text = "2) "
