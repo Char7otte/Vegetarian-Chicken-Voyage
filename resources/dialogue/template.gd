@@ -4,5 +4,5 @@ extends Resource
 #loading them in order into an array for each day. So, each resource should have subtitle text
 #and the following dialogue options for the player.
 
-@export var subtitle_text_array: Array[PackedStringArray]
-@export var dialogue_options_array: Array[PackedStringArray]
+@export var speaker_text: Array[PackedStringArray]
+@export var reply_options: Array[PackedStringArray]

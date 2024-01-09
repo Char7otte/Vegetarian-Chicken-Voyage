@@ -2,24 +2,24 @@ extends Control
 
 signal option_selected
 
-@onready var option_labels_parent = %OptionLabels
-@onready var subtitle_label = %SubtitleLabel
-@onready var subtitle_scroll_speed_timer = %SubtitleTextScrollSpeedTimer
+@export var dialogue_manager: Node
 
-var option_labels: Array
 var dialogue_manager: Node
+@onready var speaker_label = %SpeakerLabel
+@onready var speaker_speed_timer = %SpeakerSpeedTimer
+@onready var reply_labels_parent = %Replies
+@onready var reply_labels = %Replies.get_children()
 
 func _ready():
-	option_labels = option_labels_parent.get_children()
-	on_dialogue_manager_make_option_labels_invisible()
+	make_reply_labels_invisible()
 	
 	dialogue_manager = get_parent().get_parent().get_node("DialogueManager")
-	dialogue_manager.make_option_labels_invisible.connect(on_dialogue_manager_make_option_labels_invisible)
-	dialogue_manager.make_option_labels_visible.connect(on_dialogue_manager_make_option_labels_visible)
+	dialogue_manager.make_reply_labels_invisible.connect(make_reply_labels_invisible)
+	dialogue_manager.make_reply_labels_visible.connect(make_reply_labels_visible)
 
 
 func _process(_delta):
-	if option_labels_parent.visible:
+	if reply_labels_parent.is_visible():
 		if Input.is_action_just_pressed("talk_option_one"):
 			print("Dialogue option 1 selected.")
 			option_selected.emit()
@@ -29,27 +29,25 @@ func _process(_delta):
 			print("Dialogue option 3 selected.")
 
 
-func change_subtitle_label_text(new_text):
-	subtitle_label.text = new_text
+func change_speaker_text(new_text):
+	speaker_label.text = new_text
 	print(new_text)
 	
-	subtitle_scroll_speed_timer.start()
-	await subtitle_scroll_speed_timer.timeout
+	speaker_speed_timer.start()
+	await speaker_speed_timer.timeout
 
 
-func change_option_label_text(new_option_label_text_array):
-	option_labels[0].text = new_option_label_text_array[0]
-	option_labels[1].text = new_option_label_text_array[1]
-	option_labels[2].text = new_option_label_text_array[2]
-	print("1: " + option_labels[0].text)
-	print("2: " + option_labels[1].text)
-	print("3: " + option_labels[2].text)
+func change_replies_text(new_replies_array):
+	for label in reply_labels:
+		label.text = new_replies_array[0]
+		new_replies_array.remove_at(0)
+		print(label.text)
 
 
 
-func on_dialogue_manager_make_option_labels_invisible():
-	option_labels_parent.set_visible(false)
+func make_reply_labels_invisible():
+	reply_labels_parent.set_visible(false)
 
 
-func on_dialogue_manager_make_option_labels_visible():
-	option_labels_parent.set_visible(true)
+func make_reply_labels_visible():
+	reply_labels_parent.set_visible(true)
