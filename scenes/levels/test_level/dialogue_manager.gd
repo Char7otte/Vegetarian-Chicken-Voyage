@@ -7,7 +7,7 @@ signal make_reply_labels_visible
 
 @onready var dialogue_box = %DialogueBox
 
-var dialouge_progression: int
+var dialogue_progression: int
 var speaker_text: Array[PackedStringArray]
 var reply_options: Array[PackedStringArray]
 
@@ -23,17 +23,19 @@ func _ready():
 
 func change_lines():
 	make_reply_labels_invisible.emit()
+	
 	print("=== \nDIALOGUE STARTED")
 	
-	for text in speaker_text[dialouge_progression]:
+	for text in speaker_text[dialogue_progression]:
 		await dialogue_box.change_speaker_text(text)
 	
 	print("DIALOGUE FINISHED\n===")
-	make_reply_labels_visible.emit()
 	
-	dialogue_box.change_replies_text(reply_options[dialouge_progression])
+	make_reply_labels_visible.emit()
+	dialogue_box.change_replies_text(reply_options[dialogue_progression])
+	
 	await dialogue_box.option_selected
 
 func on_option_selected():
-	dialouge_progression += 1
+	dialogue_progression += 1
 	change_lines()
