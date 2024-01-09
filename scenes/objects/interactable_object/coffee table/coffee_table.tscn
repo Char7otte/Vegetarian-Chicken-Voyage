@@ -16,6 +16,7 @@ collision_layer = 3
 [node name="InteractComponent" parent="." instance=ExtResource("1_ooo5c")]
 
 [node name="TaskComponent" parent="." instance=ExtResource("2_2xrst")]
+task_message = "Clean up the table."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00552368, -0.000244141, 0)
