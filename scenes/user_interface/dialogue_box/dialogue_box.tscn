@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://do0wm2eqacxe6"]
+
+[ext_resource type="Script" path="res://scenes/user_interface/dialogue_box/dialogue_box.gd" id="1_lb6nd"]
+
+[node name="DialogueBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 520.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lb6nd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 235.0
+
+[node name="SpeakerLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SPEAKER TEXT HERE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "                                                                                                                   "
+
+[node name="Replies" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Option1" type="Label" parent="VBoxContainer/HBoxContainer/Replies"]
+layout_mode = 2
+text = "1) Option 1"
+
+[node name="Option2" type="Label" parent="VBoxContainer/HBoxContainer/Replies"]
+layout_mode = 2
+text = "2) Option 2"
+
+[node name="Option3" type="Label" parent="VBoxContainer/HBoxContainer/Replies"]
+layout_mode = 2
+text = "3) Option 3"
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpeakerSpeedTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0

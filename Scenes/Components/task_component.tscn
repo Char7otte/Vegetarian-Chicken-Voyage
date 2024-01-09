@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://kosas30wh7ad"]
-
-[ext_resource type="Script" path="res://Scenes/Components/task_component.gd" id="1_1p3nq"]
-
-[node name="TaskComponent" type="Node"]
-script = ExtResource("1_1p3nq")

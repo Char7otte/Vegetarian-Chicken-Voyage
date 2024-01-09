@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bou25tx5kp684"]
+
+[ext_resource type="Script" path="res://resources/dialogue/template.gd" id="1_fvft6"]
+
+[resource]
+script = ExtResource("1_fvft6")
+speaker_text = Array[PackedStringArray]([PackedStringArray("Good morning, honey!", "Did you sleep well?"), PackedStringArray("That\'s great!", "Here are the tasks for today!")])
+reply_options = Array[PackedStringArray]([PackedStringArray("It was fine.", "It was bad.", "..."), PackedStringArray()])

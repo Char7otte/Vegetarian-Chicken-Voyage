@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://blqm4pvm58uua"]
+
+[ext_resource type="Script" path="res://resources/dialogue/template.gd" id="1_jri85"]
+
+[resource]
+script = ExtResource("1_jri85")
+subtitle_text_array = Array[PackedStringArray]([])
+dialogue_options_array = Array[PackedStringArray]([])
