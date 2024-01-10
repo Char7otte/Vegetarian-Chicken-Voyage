@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/user_interface/task_list/task_list.gd" id="1_mns61"]
 
-[node name="TaskList" type="Control"]
+[node name="TaskList" type="Control" groups=["task_list"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,10 +21,24 @@ offset_left = -16.0
 offset_bottom = 50.0
 grow_horizontal = 0
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "1) "
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "sadfasdfasdfas"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 text = "2) "
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "sadfasdfasdfas"
