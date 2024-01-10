@@ -35,4 +35,4 @@ func assign_tasks_to_task_list(tasks):
 		print("Task list missing.")
 		return
 	
-	
+	task_list.add_tasks(tasks)
