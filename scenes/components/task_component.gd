@@ -3,9 +3,9 @@ class_name TaskComponent
 
 @export var task_message: String
 
-func _ready():
-	get_parent().add_to_group("InteractableObjects")
-	print(get_parent().name + " added to group.")
+func _init():
+	add_to_group("InteractableObjects")
+	print("Added to group.")
 
 func activate_interaction():
 	var animation_player = get_parent().get_node("Model").get_node("AnimationPlayer")
