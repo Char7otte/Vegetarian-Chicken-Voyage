@@ -2,10 +2,10 @@
 
 [node name="Task" type="HBoxContainer"]
 
-[node name="Task Number" type="Label" parent="."]
+[node name="TaskNumber" type="Label" parent="."]
 layout_mode = 2
 text = "1) "
 
-[node name="Task Instructions" type="Label" parent="."]
+[node name="TaskInstructions" type="Label" parent="."]
 layout_mode = 2
 text = "sadfasdfasdfas"
