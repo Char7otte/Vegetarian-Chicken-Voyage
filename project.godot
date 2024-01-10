@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://autoload/game_manager.gd"
-TaskManager="*res://scenes/levels/test_level/task_manager.gd"
+TaskManager="*res://autoload/task_manager.gd"
 
 [input]
 
