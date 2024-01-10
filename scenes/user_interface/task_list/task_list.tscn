@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://6fvvx0po0gsw"]
+[gd_scene load_steps=3 format=3 uid="uid://6fvvx0po0gsw"]
 
 [ext_resource type="Script" path="res://scenes/user_interface/task_list/task_list.gd" id="1_mns61"]
+[ext_resource type="PackedScene" uid="uid://qeks0eikb6rf" path="res://scenes/user_interface/task_list/task.tscn" id="2_ldkc4"]
 
 [node name="TaskList" type="Control" groups=["task_list"]]
 layout_mode = 3
@@ -21,24 +22,14 @@ offset_left = -16.0
 offset_bottom = 50.0
 grow_horizontal = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Task" parent="VBoxContainer" instance=ExtResource("2_ldkc4")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "1) "
-
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "sadfasdfasdfas"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Task2" parent="VBoxContainer" instance=ExtResource("2_ldkc4")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="Task3" parent="VBoxContainer" instance=ExtResource("2_ldkc4")]
 layout_mode = 2
-text = "2) "
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="Task4" parent="VBoxContainer" instance=ExtResource("2_ldkc4")]
 layout_mode = 2
-text = "sadfasdfasdfas"

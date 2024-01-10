@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://qeks0eikb6rf"]
+
+[node name="Task" type="HBoxContainer"]
+
+[node name="Task Number" type="Label" parent="."]
+layout_mode = 2
+text = "1) "
+
+[node name="Task Instructions" type="Label" parent="."]
+layout_mode = 2
+text = "sadfasdfasdfas"
