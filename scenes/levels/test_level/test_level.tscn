@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://627r7skgst5t"]
+[gd_scene load_steps=14 format=3 uid="uid://627r7skgst5t"]
 
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://assets/materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://scenes/objects/player/player.tscn" id="2_llmoq"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://scenes/levels/test_level/debug.gd" id="5_m4tnp"]
 [ext_resource type="PackedScene" uid="uid://6fvvx0po0gsw" path="res://scenes/user_interface/task_list/task_list.tscn" id="6_6cih0"]
 [ext_resource type="PackedScene" uid="uid://do0wm2eqacxe6" path="res://scenes/user_interface/dialogue_box/dialogue_box.tscn" id="6_kujl7"]
-[ext_resource type="Script" path="res://scenes/levels/test_level/task_manager.gd" id="7_6xa7q"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ulfwr"]
 
@@ -27,9 +26,6 @@ size = Vector3(20, 1, 20)
 
 [node name="Debug" type="Node" parent="."]
 script = ExtResource("5_m4tnp")
-
-[node name="TaskManager" type="Node" parent="."]
-script = ExtResource("7_6xa7q")
 
 [node name="DialogueManager" type="Node" parent="."]
 script = ExtResource("3_fxxpy")

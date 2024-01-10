@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3ca6o6dpn68d"]
 
-[ext_resource type="PackedScene" uid="uid://dqrad2a8anfn3" path="res://Scenes/Components/interact_component.tscn" id="1_ooo5c"]
-[ext_resource type="PackedScene" uid="uid://kosas30wh7ad" path="res://Scenes/Components/task_component.tscn" id="2_2xrst"]
-[ext_resource type="PackedScene" uid="uid://bdh88yf7pubvi" path="res://Assets/Models/Coffee Table/table.blend" id="3_kyiej"]
+[ext_resource type="PackedScene" uid="uid://dqrad2a8anfn3" path="res://scenes/components/interact_component.tscn" id="1_ooo5c"]
+[ext_resource type="PackedScene" uid="uid://kosas30wh7ad" path="res://scenes/components/task_component.tscn" id="2_2xrst"]
+[ext_resource type="PackedScene" uid="uid://bdh88yf7pubvi" path="res://assets/models/coffee_table/table.blend" id="3_kyiej"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghnoa"]
 size = Vector3(4.39691, 0.999512, 1)
@@ -16,6 +16,7 @@ collision_layer = 3
 [node name="InteractComponent" parent="." instance=ExtResource("1_ooo5c")]
 
 [node name="TaskComponent" parent="." instance=ExtResource("2_2xrst")]
+task_message = "Clean up the table."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00552368, -0.000244141, 0)

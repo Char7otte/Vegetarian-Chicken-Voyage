@@ -15,6 +15,11 @@ run/main_scene="res://scenes/levels/test_level/test_level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://autoload/game_manager.gd"
+TaskManager="*res://autoload/task_manager.gd"
+
 [input]
 
 move_left={
