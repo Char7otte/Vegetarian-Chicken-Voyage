@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://627r7skgst5t"]
+[gd_scene load_steps=13 format=3 uid="uid://627r7skgst5t"]
 
-[ext_resource type="PackedScene" uid="uid://0exkjst4e6bg" path="res://scenes/levels/managers/task_manager.tscn" id="2_83d6k"]
+[ext_resource type="PackedScene" uid="uid://0exkjst4e6bg" path="res://scenes/managers/task_manager/task_manager.tscn" id="2_83d6k"]
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://assets/materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://scenes/objects/player/player.tscn" id="2_llmoq"]
 [ext_resource type="PackedScene" uid="uid://b3ca6o6dpn68d" path="res://scenes/objects/interactable_object/coffee table/coffee_table.tscn" id="3_8l675"]
