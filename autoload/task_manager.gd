@@ -5,8 +5,6 @@ signal task_completed(task_number)
 @onready var game_manager = get_node("/root/GameManager")
 @onready var task_objects_group = get_tree().get_nodes_in_group("InteractableObjects")
 
-var tasks_for_the_day = []
-
 func _ready():
 	game_manager.task_count_generated.connect(on_task_count_generated)
 
