@@ -1,5 +1,6 @@
 extends Node
 
+
 @onready var game_manager = get_node("/root/GameManager")
 @onready var task_objects_group = get_tree().get_nodes_in_group("InteractableObjects")
 
@@ -12,6 +13,8 @@ func on_task_count_generated(task_count):
 	for i in range(task_count):
 		var selected_task_task_component = select_random_task()
 		selected_task_task_component.activate_interaction()
+		
+		selected_task_task_component.task_number = i
 		
 		var task_list = get_tree().get_first_node_in_group("task_list")
 		task_list.instantiate_task_scene(selected_task_task_component.task_message, i)
