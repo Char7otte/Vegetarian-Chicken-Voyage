@@ -11,6 +11,10 @@ func _ready():
 
 func calculate_task_count(day, multiplier):
 	var count = day * multiplier
+	var task_group_size = task_objects_group.size()
+	if count >= task_group_size:
+		count = task_group_size
+		print("Task limit reached")
 	return count
 
 func generate_task_objects(_task_count):
