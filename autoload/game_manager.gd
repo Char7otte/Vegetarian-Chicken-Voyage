@@ -1,4 +1,4 @@
 extends Node
 
-@export var task_day_multiplier = 2
-@export var days_counter = 1
+var task_day_multiplier = 2
+var days_counter = 1
