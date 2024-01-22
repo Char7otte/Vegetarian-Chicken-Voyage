@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://627r7skgst5t"]
+[gd_scene load_steps=16 format=3 uid="uid://627r7skgst5t"]
 
 [ext_resource type="PackedScene" uid="uid://0exkjst4e6bg" path="res://scenes/levels/managers/task_manager.tscn" id="2_83d6k"]
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://assets/materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://bou25tx5kp684" path="res://resources/dialogue/test_level/test_level_1.tres" id="4_1wjae"]
 [ext_resource type="Script" path="res://scenes/levels/test_level/debug.gd" id="5_m4tnp"]
 [ext_resource type="PackedScene" uid="uid://6fvvx0po0gsw" path="res://scenes/user_interface/task_list/task_list.tscn" id="6_6cih0"]
+[ext_resource type="PackedScene" uid="uid://5faphpqbwdtf" path="res://scenes/user_interface/center_pop_up/center_pop_up.tscn" id="6_6hptg"]
 [ext_resource type="PackedScene" uid="uid://do0wm2eqacxe6" path="res://scenes/user_interface/dialogue_box/dialogue_box.tscn" id="6_kujl7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ulfwr"]
@@ -18,10 +19,10 @@
 albedo_texture = ExtResource("2_a3m2a")
 
 [sub_resource type="BoxMesh" id="BoxMesh_0baw4"]
-size = Vector3(20, 1, 20)
+size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0nqc"]
-size = Vector3(20, 1, 20)
+size = Vector3(10, 1, 10)
 
 [node name="TestLevel" type="Node3D"]
 
@@ -41,6 +42,9 @@ unique_name_in_owner = true
 offset_left = 10.0
 
 [node name="TaskList" parent="User Interface" instance=ExtResource("6_6cih0")]
+unique_name_in_owner = true
+
+[node name="CenterPopUp" parent="User Interface" instance=ExtResource("6_6hptg")]
 
 [node name="Player" parent="." instance=ExtResource("2_llmoq")]
 
