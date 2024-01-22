@@ -6,9 +6,10 @@ signal task_completed(task_id)
 @onready var task_objects_group = get_tree().get_nodes_in_group("InteractableObjects")
 @onready var task_list = %TaskList
 
+var task_count: int
 
 func _ready():
-	var task_count = calculate_task_count(game_manager.days_counter, game_manager.task_day_multiplier)
+	task_count = calculate_task_count(game_manager.days_counter, game_manager.task_day_multiplier)
 	generate_task_objects(task_count)
 
 func calculate_task_count(day, multiplier):
