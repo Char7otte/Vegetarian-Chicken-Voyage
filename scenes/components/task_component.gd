@@ -20,6 +20,9 @@ func on_player_interact():
 	task_manager.task_completed.emit(task_number)
 	
 	var animation_player = get_parent().get_node("Model").get_node_or_null("AnimationPlayer")
+	if !animation_player:
+		print("Animation player not found in", get_parent().name)
+		return
 	animation_player.play("Fix Anim")
 
 func disable_interaction():
