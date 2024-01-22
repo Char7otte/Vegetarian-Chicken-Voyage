@@ -4,5 +4,5 @@ extends Control
 func _ready():
 	hide()
 
-func on_day_completed():
+func on_all_tasks_finished():
 	show()
