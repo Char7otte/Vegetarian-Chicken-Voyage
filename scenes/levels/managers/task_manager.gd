@@ -12,8 +12,8 @@ func _ready():
 func calculate_task_count(day, multiplier):
 	return day * multiplier
 
-func generate_task_objects(task_count):
-	for i in range(task_count):
+func generate_task_objects(_task_count):
+	for i in range(_task_count):
 		var selected_task_task_component = select_random_task()
 		selected_task_task_component.activate_interaction()
 		
