@@ -2,7 +2,7 @@ extends Control
 
 @export var task_template: PackedScene
 
-@onready var task_manager = get_node("/root/TaskManager")
+@onready var task_manager = get_tree().current_scene.get_node("TaskManager")
 
 var task_messages = []
 

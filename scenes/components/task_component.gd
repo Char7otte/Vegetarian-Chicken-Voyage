@@ -3,7 +3,7 @@ class_name TaskComponent
 
 @export var task_message: String
 
-@onready var task_manager = get_node("/root/TaskManager")
+@onready var task_manager = get_tree().current_scene.get_node("TaskManager")
 
 var task_number: int
 
