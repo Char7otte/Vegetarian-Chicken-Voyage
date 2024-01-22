@@ -4,6 +4,9 @@ class_name TaskComponent
 @export var task_message: String
 
 @onready var task_manager = get_node("/root/TaskManager")
+
+var task_number: int
+
 func _init():
 	add_to_group("InteractableObjects")
 	print("Added to group.")
