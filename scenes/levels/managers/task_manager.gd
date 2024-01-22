@@ -4,6 +4,8 @@ signal task_completed(task_id)
 
 @onready var game_manager = get_node("/root/GameManager")
 @onready var task_objects_group = get_tree().get_nodes_in_group("InteractableObjects")
+@onready var task_list = %TaskList
+
 
 func _ready():
 	var task_count = calculate_task_count(game_manager.days_counter, game_manager.task_day_multiplier)
@@ -25,7 +27,6 @@ func generate_task_objects(_task_count):
 		selected_task_task_component.task_id = i
 		selected_task_task_component.task_completed.connect(on_task_completed)
 		
-		var task_list = get_tree().get_first_node_in_group("task_list")
 		task_list.instantiate_task_scene(selected_task_task_component.task_message, i)
 	
 	disable_unused_objects()
