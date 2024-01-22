@@ -6,9 +6,13 @@ signal task_completed(task_number)
 @onready var task_objects_group = get_tree().get_nodes_in_group("InteractableObjects")
 
 func _ready():
-	game_manager.task_count_generated.connect(on_task_count_generated)
+	var task_count = calculate_task_count(game_manager.days_counter, game_manager.task_day_multiplier)
+	generate_task_objects(task_count)
 
-func on_task_count_generated(task_count):
+func calculate_task_count(day, multiplier):
+	return day * multiplier
+
+func generate_task_objects(task_count):
 	for i in range(task_count):
 		var selected_task_task_component = select_random_task()
 		selected_task_task_component.activate_interaction()

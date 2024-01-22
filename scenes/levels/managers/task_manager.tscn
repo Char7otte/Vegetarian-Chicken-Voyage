@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0exkjst4e6bg"]
+
+[ext_resource type="Script" path="res://scenes/levels/managers/task_manager.gd" id="1_ihmam"]
+
+[node name="TaskManager" type="Node"]
+script = ExtResource("1_ihmam")
