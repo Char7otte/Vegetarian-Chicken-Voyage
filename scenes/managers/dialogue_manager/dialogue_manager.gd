@@ -12,8 +12,6 @@ var speaker_text: Array[PackedStringArray]
 var reply_options: Array[PackedStringArray]
 
 func _ready():
-	#await get_tree().create_timer(0.1).timeout
-	
 	dialogue_lines = game_manager.get_lines_for_the_day()
 	speaker_text = dialogue_lines.speaker_text
 	reply_options = dialogue_lines.reply_options
