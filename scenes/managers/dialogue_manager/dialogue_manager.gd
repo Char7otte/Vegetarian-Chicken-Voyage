@@ -22,6 +22,8 @@ func _ready():
 
 func change_lines():
 	make_reply_labels_invisible.emit()
+	if speaker_text.size() <= 0:
+		return
 	for text in speaker_text[dialogue_progression]:
 		await dialogue_box.change_speaker_text(text)
 	if reply_options[dialogue_progression].is_empty():
