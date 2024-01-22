@@ -9,7 +9,6 @@ var task_number: int
 
 func _init():
 	add_to_group("InteractableObjects")
-	print("Added to group.")
 
 func activate_interaction():
 	var animation_player = get_parent().get_node("Model").get_node_or_null("AnimationPlayer")
