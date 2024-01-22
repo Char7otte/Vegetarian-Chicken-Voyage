@@ -15,7 +15,6 @@ func on_task_count_generated(task_count):
 		
 		var task_list = get_tree().get_first_node_in_group("task_list")
 		task_list.instantiate_task_scene(selected_task_task_component.task_message, i)
-		task_objects_group.erase(selected_task_task_component)
 	
 	for task in task_objects_group:
 		task.disable_interaction()
