@@ -1,5 +1,8 @@
 extends Control
 
+@onready var game_manager = get_node("/root/GameManager")
+@onready var task_manager = get_tree().current_scene.get_node("TaskManager")
+@onready var next_level_button = %NextLevelButton
 
 func _ready():
 	hide()
