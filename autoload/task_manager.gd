@@ -1,5 +1,6 @@
 extends Node
 
+signal task_completed(task_number)
 
 @onready var game_manager = get_node("/root/GameManager")
 @onready var task_objects_group = get_tree().get_nodes_in_group("InteractableObjects")
