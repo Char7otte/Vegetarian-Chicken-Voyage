@@ -8,7 +8,10 @@ func _init():
 	print("Added to group.")
 
 func activate_interaction():
-	var animation_player = get_parent().get_node("Model").get_node("AnimationPlayer")
+	var animation_player = get_parent().get_node("Model").get_node_or_null("AnimationPlayer")
+	if !animation_player:
+		print("Animation Player not found on ", get_parent().name)
+		return;
 	animation_player.play("Break Anim")
 
 func deactivate_interaction():
