@@ -22,5 +22,4 @@ func instantiate_task_scene(task_message, task_number):
 		task_instruction_label.set_text(task_message)
 
 func on_task_complete(task_number):
-	print("Task completed", task_number)
 	task_messages[task_number].get_node("CheckBox").button_pressed = true
