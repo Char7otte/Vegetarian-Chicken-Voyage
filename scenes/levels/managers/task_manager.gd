@@ -1,6 +1,7 @@
 extends Node
 
 signal task_completed(task_id)
+signal all_tasks_finished
 
 @onready var game_manager = get_node("/root/GameManager")
 @onready var task_objects_group = get_tree().get_nodes_in_group("InteractableObjects")
@@ -44,3 +45,11 @@ func disable_unused_objects():
 
 func on_task_completed(task_id):
 	task_completed.emit(task_id)
+	
+	check_if_all_tasks_are_completed()
+
+func check_if_all_tasks_are_completed():
+	task_count -= 1
+	if task_count <= 0:
+		print("All tasks finished")
+		all_tasks_finished.emit()
