@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://5faphpqbwdtf"]
+[gd_scene load_steps=2 format=3 uid="uid://5faphpqbwdtf"]
+
+[ext_resource type="Script" path="res://scenes/user_interface/center_pop_up/center_pop_up.gd" id="1_xe77b"]
 
 [node name="CenterPopUp" type="Control"]
 layout_mode = 3
@@ -8,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+script = ExtResource("1_xe77b")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -25,7 +28,8 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 76
 text = "Day Completed!"
 
-[node name="Button" type="Button" parent="."]
+[node name="NextLevelButton" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
