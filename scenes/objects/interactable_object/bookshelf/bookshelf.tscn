@@ -19,4 +19,4 @@ task_message = "Organize the bookshelf."
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00427246, -0.0615234, 0.013092)
 shape = SubResource("BoxShape3D_emvox")
 
-[node name="bookshelf" parent="." instance=ExtResource("3_dyvn5")]
+[node name="Model" parent="." instance=ExtResource("3_dyvn5")]
