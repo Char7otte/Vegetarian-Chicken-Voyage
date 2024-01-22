@@ -22,11 +22,15 @@ func generate_task_objects(task_count):
 		var task_list = get_tree().get_first_node_in_group("task_list")
 		task_list.instantiate_task_scene(selected_task_task_component.task_message, i)
 	
-	for task in task_objects_group:
-		task.disable_interaction()
+	disable_unused_objects()
 
 func select_random_task():
 	task_objects_group.shuffle()
 	var selected_task_object = task_objects_group[0]
 	task_objects_group.erase(selected_task_object)
 	return selected_task_object
+
+func disable_unused_objects():
+	for task in task_objects_group:
+		task.disable_interaction()
+
