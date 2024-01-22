@@ -3,6 +3,7 @@ extends Control
 
 func _ready():
 	hide()
+	
 	task_manager.all_tasks_finished.connect(on_all_tasks_finished)
 	next_level_button.pressed.connect(on_next_level_button_pressed)
 
