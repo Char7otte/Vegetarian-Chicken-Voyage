@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://627r7skgst5t"]
+[gd_scene load_steps=14 format=3 uid="uid://627r7skgst5t"]
 
 [ext_resource type="PackedScene" uid="uid://0exkjst4e6bg" path="res://scenes/levels/managers/task_manager.tscn" id="2_83d6k"]
 [ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://assets/materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
@@ -10,10 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://6fvvx0po0gsw" path="res://scenes/user_interface/task_list/task_list.tscn" id="6_6cih0"]
 [ext_resource type="PackedScene" uid="uid://5faphpqbwdtf" path="res://scenes/user_interface/center_pop_up/center_pop_up.tscn" id="6_6hptg"]
 [ext_resource type="PackedScene" uid="uid://do0wm2eqacxe6" path="res://scenes/user_interface/dialogue_box/dialogue_box.tscn" id="6_kujl7"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ulfwr"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_20bai"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nxsf"]
 albedo_texture = ExtResource("2_a3m2a")
@@ -47,15 +43,6 @@ unique_name_in_owner = true
 [node name="CenterPopUp" parent="User Interface" instance=ExtResource("6_6hptg")]
 
 [node name="Player" parent="." instance=ExtResource("2_llmoq")]
-
-[node name="boywife" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.69699)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="boywife"]
-mesh = SubResource("CapsuleMesh_ulfwr")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="boywife"]
-shape = SubResource("CapsuleShape3D_20bai")
 
 [node name="Environment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
