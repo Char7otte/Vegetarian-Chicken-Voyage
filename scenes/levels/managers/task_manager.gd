@@ -18,6 +18,7 @@ func generate_task_objects(task_count):
 		selected_task_task_component.activate_interaction()
 		
 		selected_task_task_component.task_id = i
+		selected_task_task_component.task_completed.connect(on_task_completed)
 		
 		var task_list = get_tree().get_first_node_in_group("task_list")
 		task_list.instantiate_task_scene(selected_task_task_component.task_message, i)
@@ -34,3 +35,5 @@ func disable_unused_objects():
 	for task in task_objects_group:
 		task.disable_interaction()
 
+func on_task_completed(task_id):
+	task_completed.emit(task_id)

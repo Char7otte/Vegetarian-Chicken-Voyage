@@ -1,6 +1,8 @@
 extends Node
 class_name TaskComponent
 
+signal task_completed(task_id)
+
 @export var task_message: String
 
 @onready var task_manager = get_tree().current_scene.get_node("TaskManager")
@@ -23,7 +25,7 @@ func disable_interaction():
 func on_player_interact():
 	disable_interaction()
 	
-	task_manager.task_completed.emit(task_number)
+	task_completed.emit(task_id)
 	
 	var animation_player = get_parent().get_node("Model").get_node_or_null("AnimationPlayer")
 	if !animation_player:
