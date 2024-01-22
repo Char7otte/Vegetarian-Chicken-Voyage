@@ -51,5 +51,4 @@ func on_task_completed(task_id):
 func check_if_all_tasks_are_completed():
 	task_count -= 1
 	if task_count <= 0:
-		print("All tasks finished")
 		all_tasks_finished.emit()

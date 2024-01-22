@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/user_interface/task_list/task_list.gd" id="1_mns61"]
 [ext_resource type="PackedScene" uid="uid://qeks0eikb6rf" path="res://scenes/user_interface/task_list/task.tscn" id="2_ldkc4"]
 
-[node name="TaskList" type="Control" groups=["task_list"]]
+[node name="TaskList" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

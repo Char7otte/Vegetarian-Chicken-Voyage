@@ -3,17 +3,16 @@ extends Node
 signal make_reply_labels_invisible
 signal make_reply_labels_visible
 
-@export var dialogue_lines: Resource
-
+@onready var game_manager = get_node("/root/GameManager")
 @onready var dialogue_box = %DialogueBox
 
 var dialogue_progression: int
+var dialogue_lines: Resource
 var speaker_text: Array[PackedStringArray]
 var reply_options: Array[PackedStringArray]
 
 func _ready():
-	await get_tree().create_timer(0.1).timeout
-	
+	dialogue_lines = game_manager.get_lines_for_the_day()
 	speaker_text = dialogue_lines.speaker_text
 	reply_options = dialogue_lines.reply_options
 	
@@ -23,14 +22,10 @@ func _ready():
 
 func change_lines():
 	make_reply_labels_invisible.emit()
-	
-	print("=== \nDIALOGUE STARTED")
-	
+	if speaker_text.size() <= 0:
+		return
 	for text in speaker_text[dialogue_progression]:
 		await dialogue_box.change_speaker_text(text)
-	
-	print("DIALOGUE FINISHED\n===")
-	
 	if reply_options[dialogue_progression].is_empty():
 		dialogue_box.change_speaker_text("")
 		return
