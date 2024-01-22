@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3ca6o6dpn68d"]
+[gd_scene load_steps=5 format=3 uid="uid://b3ca6o6dpn68d"]
 
-[ext_resource type="PackedScene" uid="uid://dqrad2a8anfn3" path="res://scenes/components/interact_component.tscn" id="1_ooo5c"]
 [ext_resource type="PackedScene" uid="uid://kosas30wh7ad" path="res://scenes/components/task_component.tscn" id="2_2xrst"]
 [ext_resource type="PackedScene" uid="uid://bdh88yf7pubvi" path="res://assets/models/coffee_table/table.blend" id="3_kyiej"]
 
@@ -12,8 +11,6 @@ size = Vector3(0.416138, 0.50531, 0.418701)
 
 [node name="Interactable Object" type="StaticBody3D"]
 collision_layer = 3
-
-[node name="InteractComponent" parent="." instance=ExtResource("1_ooo5c")]
 
 [node name="TaskComponent" parent="." instance=ExtResource("2_2xrst")]
 task_message = "Clean up the table."

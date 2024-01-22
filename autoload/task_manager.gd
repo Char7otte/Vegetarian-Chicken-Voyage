@@ -18,7 +18,7 @@ func on_task_count_generated(task_count):
 		task_objects_group.erase(selected_task_task_component)
 	
 	for task in task_objects_group:
-		task.deactivate_interaction()
+		task.disable_interaction()
 
 func select_random_task():
 	task_objects_group.shuffle()
