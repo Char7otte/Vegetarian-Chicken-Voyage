@@ -21,7 +21,6 @@ func _physics_process(_delta):
 
 func _input(event):
 	mouse_camera_control(event)
-	
 
 func get_player_movement_vector():
 	var movement_vector = Vector3.ZERO
