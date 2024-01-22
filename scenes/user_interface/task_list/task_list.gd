@@ -2,12 +2,12 @@ extends Control
 
 @export var task_template: PackedScene
 
-@onready var task_manager = get_node("/root/TaskManager")
+@onready var task_manager = get_tree().current_scene.get_node("TaskManager")
 
 var task_messages = []
 
 func _ready():
-	task_manager.task_completed.connect(on_task_complete)
+	task_manager.task_completed.connect(on_task_completed)
 
 func instantiate_task_scene(task_message, task_number):
 		var task_template_instance = task_template.instantiate()
@@ -21,6 +21,5 @@ func instantiate_task_scene(task_message, task_number):
 		var task_instruction_label = task_template_instance.get_node("TaskInstructions")
 		task_instruction_label.set_text(task_message)
 
-func on_task_complete(task_number):
-	print("Task completed", task_number)
-	task_messages[task_number].get_node("CheckBox").button_pressed = true
+func on_task_completed(task_id):
+	task_messages[task_id].get_node("CheckBox").button_pressed = true
