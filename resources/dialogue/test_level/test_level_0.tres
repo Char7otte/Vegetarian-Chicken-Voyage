@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://vr1r4n75o8at"]
+
+[ext_resource type="Script" path="res://resources/dialogue/template.gd" id="1_fvft6"]
+
+[resource]
+script = ExtResource("1_fvft6")
+speaker_text = Array[PackedStringArray]([PackedStringArray("ERROR. NO RESOURCE FOR THE DAY FOUND.")])
+reply_options = Array[PackedStringArray]([PackedStringArray("ERROR.", "ERROR.", "ERROR.")])
