@@ -28,7 +28,7 @@ func _process(_delta):
 
 func change_speaker_text(new_text):
 	speaker_label.text = new_text
-	print(new_text)
+	print("DIALOGUE: ",new_text)
 	
 	speaker_speed_timer.start()
 	await speaker_speed_timer.timeout
@@ -37,7 +37,7 @@ func change_replies_text(new_replies_array):
 	for label in reply_labels:
 		label.text = new_replies_array[0]
 		new_replies_array.remove_at(0)
-		print(label.text)
+		print("REPLY: ", label.text)
 
 func make_reply_labels_invisible():
 	reply_labels_parent.set_visible(false)

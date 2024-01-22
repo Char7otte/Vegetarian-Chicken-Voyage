@@ -23,14 +23,8 @@ func _ready():
 
 func change_lines():
 	make_reply_labels_invisible.emit()
-	
-	print("=== \nDIALOGUE STARTED")
-	
 	for text in speaker_text[dialogue_progression]:
 		await dialogue_box.change_speaker_text(text)
-	
-	print("DIALOGUE FINISHED\n===")
-	
 	if reply_options[dialogue_progression].is_empty():
 		dialogue_box.change_speaker_text("")
 		return
