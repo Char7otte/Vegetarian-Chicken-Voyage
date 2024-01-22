@@ -10,7 +10,8 @@ func _ready():
 	generate_task_objects(task_count)
 
 func calculate_task_count(day, multiplier):
-	return day * multiplier
+	var count = day * multiplier
+	return count
 
 func generate_task_objects(_task_count):
 	for i in range(_task_count):
