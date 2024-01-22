@@ -5,7 +5,7 @@ class_name TaskComponent
 
 @onready var task_manager = get_tree().current_scene.get_node("TaskManager")
 
-var task_number: int
+var task_id: int
 
 func _init():
 	add_to_group("InteractableObjects")
