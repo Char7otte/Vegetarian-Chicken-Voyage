@@ -52,3 +52,4 @@ func check_if_all_tasks_are_completed():
 	task_count -= 1
 	if task_count <= 0:
 		all_tasks_finished.emit()
+		game_manager.disable_gameplay_nodes()
