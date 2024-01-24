@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3ca6o6dpn68d"]
 
 [ext_resource type="PackedScene" uid="uid://kosas30wh7ad" path="res://scenes/components/task_component.tscn" id="2_2xrst"]
-[ext_resource type="PackedScene" uid="uid://bdh88yf7pubvi" path="res://assets/models/coffee_table/table.blend" id="3_kyiej"]
+[ext_resource type="PackedScene" uid="uid://cy1xchs5jx822" path="res://assets/models/coffee_table/table.blend" id="3_kyiej"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghnoa"]
 size = Vector3(4.39691, 0.999512, 1)
@@ -9,7 +9,7 @@ size = Vector3(4.39691, 0.999512, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8gaqn"]
 size = Vector3(0.416138, 0.50531, 0.418701)
 
-[node name="Interactable Object" type="StaticBody3D"]
+[node name="Table" type="StaticBody3D"]
 collision_layer = 3
 
 [node name="TaskComponent" parent="." instance=ExtResource("2_2xrst")]
