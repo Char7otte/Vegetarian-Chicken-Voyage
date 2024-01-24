@@ -9,7 +9,7 @@ size = Vector3(4.39691, 0.999512, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8gaqn"]
 size = Vector3(0.416138, 0.50531, 0.418701)
 
-[node name="Interactable Object" type="StaticBody3D"]
+[node name="Table" type="StaticBody3D"]
 collision_layer = 3
 
 [node name="TaskComponent" parent="." instance=ExtResource("2_2xrst")]
