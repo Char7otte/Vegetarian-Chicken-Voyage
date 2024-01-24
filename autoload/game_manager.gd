@@ -11,5 +11,17 @@ func get_lines_for_the_day():
 	else:
 		return load("res://resources/dialogue/test_level/" + dialogue_resource_array[days_counter])
 
+func disable_gameplay_nodes():
+	var nodes_to_disable: Array[Node] = []
+	
+	var player = get_tree().current_scene.get_node("Player")
+	nodes_to_disable.append(player)
+	
+	var dialogue_box = get_tree().current_scene.get_node("UserInterface").get_node("DialogueBox")
+	nodes_to_disable.append(dialogue_box)
+	
+	for node in nodes_to_disable:
+		node.process_mode = Node.PROCESS_MODE_DISABLED
+
 func go_to_next_level():
 	days_counter += 1
