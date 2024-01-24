@@ -20,16 +20,16 @@ size = Vector3(10, 1, 10)
 
 [node name="TestLevel" type="Node3D"]
 
-[node name="User Interface" type="CanvasLayer" parent="."]
+[node name="UserInterface" type="CanvasLayer" parent="."]
 
-[node name="DialogueBox" parent="User Interface" instance=ExtResource("6_kujl7")]
+[node name="DialogueBox" parent="UserInterface" instance=ExtResource("6_kujl7")]
 unique_name_in_owner = true
 offset_left = 10.0
 
-[node name="TaskList" parent="User Interface" instance=ExtResource("6_6cih0")]
+[node name="TaskList" parent="UserInterface" instance=ExtResource("6_6cih0")]
 unique_name_in_owner = true
 
-[node name="CenterPopUp" parent="User Interface" instance=ExtResource("6_6hptg")]
+[node name="CenterPopUp" parent="UserInterface" instance=ExtResource("6_6hptg")]
 
 [node name="TaskManager" parent="." instance=ExtResource("2_83d6k")]
 
