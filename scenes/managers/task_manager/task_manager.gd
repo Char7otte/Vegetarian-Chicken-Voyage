@@ -10,8 +10,20 @@ signal all_tasks_finished
 var task_count: int
 
 func _ready():
+	disable_future_day_objects()
+	
 	task_count = calculate_task_count(game_manager.days_counter, game_manager.task_day_multiplier)
 	generate_task_objects(task_count)
+
+func disable_future_day_objects():
+	var task_day_group = get_parent().get_node("InteractableObjects").get_children()
+	for group in task_day_group:
+		if group.name.to_int() > game_manager.days_counter:
+			var task_objects = group.get_children()
+			for object in task_objects:
+				var task_component = object.get_node("TaskComponent")
+				task_objects_group.erase(task_component)
+				task_component.disable_interaction()
 
 func calculate_task_count(day, multiplier):
 	var count = day * multiplier
