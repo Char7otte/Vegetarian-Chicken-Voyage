@@ -1,22 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://627r7skgst5t"]
+[gd_scene load_steps=13 format=3 uid="uid://627r7skgst5t"]
 
 [ext_resource type="PackedScene" uid="uid://0exkjst4e6bg" path="res://scenes/managers/task_manager/task_manager.tscn" id="2_83d6k"]
-[ext_resource type="Texture2D" uid="uid://cdvktvaqtgtp7" path="res://assets/materials/marble_01_diff_4k.jpg" id="2_a3m2a"]
 [ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://scenes/objects/player/player.tscn" id="2_llmoq"]
 [ext_resource type="PackedScene" uid="uid://b3ca6o6dpn68d" path="res://scenes/objects/interactable_object/coffee table/coffee_table.tscn" id="3_8l675"]
 [ext_resource type="PackedScene" uid="uid://cusgxlh6kdmqn" path="res://scenes/managers/dialogue_manager/dialogue_manager.tscn" id="3_rqt5v"]
 [ext_resource type="PackedScene" uid="uid://6fvvx0po0gsw" path="res://scenes/user_interface/task_list/task_list.tscn" id="6_6cih0"]
 [ext_resource type="PackedScene" uid="uid://5faphpqbwdtf" path="res://scenes/user_interface/center_pop_up/center_pop_up.tscn" id="6_6hptg"]
 [ext_resource type="PackedScene" uid="uid://do0wm2eqacxe6" path="res://scenes/user_interface/dialogue_box/dialogue_box.tscn" id="6_kujl7"]
+[ext_resource type="PackedScene" uid="uid://df0remyjyuv4b" path="res://assets/models/level/house.blend" id="7_ung2l"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nxsf"]
-albedo_texture = ExtResource("2_a3m2a")
+[sub_resource type="BoxShape3D" id="BoxShape3D_4amn8"]
+size = Vector3(102, 0.481445, 101.412)
 
-[sub_resource type="BoxMesh" id="BoxMesh_0baw4"]
-size = Vector3(10, 1, 10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_4epl8"]
+size = Vector3(19.8327, 18.315, 15.3984)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_i0nqc"]
-size = Vector3(10, 1, 10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_7jc4c"]
+size = Vector3(12.5033, 2.24164, 6.73267)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7b0p5"]
+points = PackedVector3Array(0, 0, 0, 7, 0, 0, 7, 0, -7, 0, 0, -7)
 
 [node name="TestLevel" type="Node3D"]
 
@@ -40,21 +43,33 @@ unique_name_in_owner = true
 [node name="Environment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 
-[node name="Floor" type="StaticBody3D" parent="Environment"]
-collision_mask = 0
+[node name="House thing" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504246, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Floor"]
-material_override = SubResource("StandardMaterial3D_1nxsf")
-mesh = SubResource("BoxMesh_0baw4")
+[node name="house" parent="Environment/House thing" instance=ExtResource("7_ung2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.3041)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor"]
-shape = SubResource("BoxShape3D_i0nqc")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/House thing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229065, -0.259277, -17.1503)
+shape = SubResource("BoxShape3D_4amn8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/House thing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.343075, 9.15903, -20.3018)
+shape = SubResource("BoxShape3D_4epl8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment/House thing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.39606, 1.11343, -9.26833)
+shape = SubResource("BoxShape3D_7jc4c")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Environment/House thing"]
+transform = Transform3D(0.938583, 0.345052, 0, -0.345052, 0.938583, 0, 0, 0, 1, 2.69629, 2.30597, -5.90516)
+shape = SubResource("ConvexPolygonShape3D_7b0p5")
 
 [node name="Table" parent="Environment" instance=ExtResource("3_8l675")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3848, 1.1749, -2.40252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -2)
 
 [node name="Table2" parent="Environment" instance=ExtResource("3_8l675")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50826, 1.1749, -2.40252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.836458, 0.54803, 0, -0.54803, 0.836458, 0, 4.77291, 0)
