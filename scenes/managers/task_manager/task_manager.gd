@@ -3,6 +3,8 @@ extends Node
 signal task_completed(task_id)
 signal all_tasks_finished
 
+@export var task_multiplier: int
+
 @onready var game_manager = get_node("/root/GameManager")
 @onready var task_objects_group = get_tree().get_nodes_in_group("InteractableObjects")
 @onready var task_list = %TaskList
@@ -12,7 +14,7 @@ var task_count: int
 func _ready():
 	disable_future_day_objects()
 	
-	task_count = calculate_task_count(game_manager.days_counter, game_manager.task_day_multiplier)
+	task_count = calculate_task_count(game_manager.days_counter, task_multiplier)
 	generate_task_objects(task_count)
 
 func disable_future_day_objects():

@@ -1,7 +1,6 @@
 extends Node
 
 var dialogue_directory = DirAccess.open("res://resources/dialogue/test_level")
-var task_day_multiplier = 2
 var days_counter = 1
 
 func get_lines_for_the_day():
