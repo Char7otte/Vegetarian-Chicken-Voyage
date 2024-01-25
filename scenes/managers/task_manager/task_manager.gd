@@ -6,26 +6,27 @@ signal all_tasks_finished
 @export var task_multiplier: int
 
 @onready var game_manager = get_node("/root/GameManager")
-@onready var task_objects_group = get_tree().get_nodes_in_group("InteractableObjects")
 @onready var task_list = %TaskList
 
 var task_count: int
+var task_objects_group: Array[Node]
 
 func _ready():
-	disable_future_day_objects()
+	enable_current_day_objects()
 	
 	task_count = calculate_task_count(game_manager.days_counter, task_multiplier)
 	generate_task_objects(task_count)
 
-func disable_future_day_objects():
-	var task_day_group = get_parent().get_node("InteractableObjects").get_children()
-	for group in task_day_group:
+func enable_current_day_objects():
+	var tasks_grouped_by_day = get_parent().get_node("InteractableObjects").get_children()
+	for group in tasks_grouped_by_day:
 		if group.name.to_int() > game_manager.days_counter:
-			var task_objects = group.get_children()
-			for object in task_objects:
-				var task_component = object.get_node("TaskComponent")
-				task_objects_group.erase(task_component)
-				task_component.disable_interaction()
+			break
+		
+		var objects_for_the_day = group.get_children()
+		for object in objects_for_the_day:
+			object = object.get_node("TaskComponent")
+			task_objects_group.append(object)
 
 func calculate_task_count(day, multiplier):
 	var count = day * multiplier
