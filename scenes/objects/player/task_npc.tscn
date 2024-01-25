@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://gdrj3756volh"]
+
+[ext_resource type="PackedScene" uid="uid://c8r46doo1dloh" path="res://scenes/components/dialogue_component.tscn" id="1_6xvys"]
+[ext_resource type="Script" path="res://scenes/objects/player/task_dialogue.gd" id="2_ewouj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7lk3p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xon4f"]
+
+[node name="TaskNPC" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7.7945)
+collision_layer = 5
+
+[node name="DialogueComponent" parent="." instance=ExtResource("1_6xvys")]
+unique_name_in_owner = true
+
+[node name="TaskDialogue" type="Node" parent="."]
+script = ExtResource("2_ewouj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_7lk3p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_xon4f")

@@ -10,6 +10,7 @@ signal option_selected
 var dialogue_manager: Node
 
 func _ready():
+	
 	make_reply_labels_invisible()
 	
 	dialogue_manager = get_parent().get_parent().get_node("DialogueManager")
@@ -23,8 +24,10 @@ func _process(_delta):
 			option_selected.emit()
 		if Input.is_action_just_pressed("talk_option_two"):
 			print("Dialogue option 2 selected.")
+			option_selected.emit()
 		if Input.is_action_just_pressed("talk_option_three"):
 			print("Dialogue option 3 selected.")
+			option_selected.emit()
 
 func change_speaker_text(new_text):
 	speaker_label.text = new_text
