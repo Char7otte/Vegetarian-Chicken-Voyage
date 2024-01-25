@@ -13,9 +13,6 @@
 
 [node name="Level" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.836459, 0.54803, 0, -0.54803, 0.836459, 0, 7.3029, 0)
-
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" parent="UserInterface" instance=ExtResource("6_kujl7")]
@@ -81,7 +78,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 material_override = ExtResource("11_b3oq6")
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00830078, 0, 0)
 size = Vector3(18, 1, 19)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.836459, 0.54803, 0, -0.54803, 0.836459, 0, 7.3029, 0)
