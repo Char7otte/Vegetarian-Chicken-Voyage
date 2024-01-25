@@ -1,0 +1,140 @@
+[gd_scene load_steps=11 format=3 uid="uid://dogfle3j2ytcd"]
+
+[ext_resource type="PackedScene" uid="uid://do0wm2eqacxe6" path="res://scenes/user_interface/dialogue_box/dialogue_box.tscn" id="1_1metf"]
+[ext_resource type="PackedScene" uid="uid://6fvvx0po0gsw" path="res://scenes/user_interface/task_list/task_list.tscn" id="2_02nyl"]
+[ext_resource type="PackedScene" uid="uid://5faphpqbwdtf" path="res://scenes/user_interface/center_pop_up/center_pop_up.tscn" id="3_senu4"]
+[ext_resource type="PackedScene" uid="uid://0exkjst4e6bg" path="res://scenes/managers/task_manager/task_manager.tscn" id="4_g6ol4"]
+[ext_resource type="PackedScene" uid="uid://cusgxlh6kdmqn" path="res://scenes/managers/dialogue_manager/dialogue_manager.tscn" id="5_che0c"]
+[ext_resource type="PackedScene" uid="uid://cjx1i4khxiwhm" path="res://scenes/objects/character/player/player.tscn" id="6_a3pax"]
+[ext_resource type="Material" uid="uid://bopdvtwyg30lv" path="res://resources/materials/orange_grid.tres" id="7_c4mnl"]
+[ext_resource type="Material" uid="uid://b038s44yohcv6" path="res://resources/materials/green_grid.tres" id="8_1j1u4"]
+[ext_resource type="Material" uid="uid://bvd7ik2akqgra" path="res://resources/materials/white_grid.tres" id="8_iqvxo"]
+[ext_resource type="PackedScene" uid="uid://gdrj3756volh" path="res://scenes/objects/character/npc/task_npc.tscn" id="10_8vptd"]
+
+[node name="Level" type="Node3D"]
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" parent="UserInterface" instance=ExtResource("1_1metf")]
+unique_name_in_owner = true
+offset_left = 10.0
+
+[node name="TaskList" parent="UserInterface" instance=ExtResource("2_02nyl")]
+unique_name_in_owner = true
+
+[node name="CenterPopUp" parent="UserInterface" instance=ExtResource("3_senu4")]
+
+[node name="TaskManager" parent="." instance=ExtResource("4_g6ol4")]
+task_multiplier = 1
+
+[node name="DialogueManager" parent="." instance=ExtResource("5_che0c")]
+
+[node name="Player" parent="." instance=ExtResource("6_a3pax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96822, 1.5, -3.00619)
+
+[node name="InteractableObjects" type="Node3D" parent="."]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="InteractableObjects"]
+material_override = ExtResource("8_1j1u4")
+
+[node name="Bed" type="CSGBox3D" parent="InteractableObjects/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0)
+size = Vector3(3, 2, 3)
+
+[node name="Nightstand" type="CSGBox3D" parent="InteractableObjects/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -2)
+
+[node name="Light bulb" type="CSGBox3D" parent="InteractableObjects/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5, -1)
+
+[node name="Bookshelf" type="CSGBox3D" parent="InteractableObjects/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+size = Vector3(1, 4, 3)
+
+[node name="Toilet" type="CSGBox3D" parent="InteractableObjects/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -7)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2.5, 2)
+size = Vector3(8, 6, 1)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -1)
+size = Vector3(8, 1, 5)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, -0.5)
+size = Vector3(1, 6, 6)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.5, -1)
+size = Vector3(1, 6, 7)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.5, -4)
+size = Vector3(9, 6, 1)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, -4)
+operation = 2
+size = Vector3(3, 4, 1)
+material = ExtResource("8_iqvxo")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -8.5)
+size = Vector3(8, 1, 8)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2.5, -4)
+size = Vector3(2, 6, 1)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, -8)
+size = Vector3(1, 6, 9)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -8.5)
+size = Vector3(1, 6, 8)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.5, -8)
+size = Vector3(1, 6, 7)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -8)
+operation = 2
+size = Vector3(1, 4, 3)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -8)
+size = Vector3(6, 1, 5)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.5, -11)
+size = Vector3(6, 6, 1)
+material = ExtResource("7_c4mnl")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.5, -5)
+size = Vector3(6, 6, 1)
+material = ExtResource("7_c4mnl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.836459, 0.54803, 0, -0.54803, 0.836459, 21.9933, 7.3029, 0)
+
+[node name="TaskNPC" parent="." instance=ExtResource("10_8vptd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -9)
