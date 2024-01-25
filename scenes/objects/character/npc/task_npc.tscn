@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://gdrj3756volh"]
 
 [ext_resource type="PackedScene" uid="uid://c8r46doo1dloh" path="res://scenes/components/dialogue_component.tscn" id="1_6xvys"]
-[ext_resource type="Script" path="res://scenes/objects/player/task_dialogue.gd" id="2_ewouj"]
+[ext_resource type="Script" path="res://scenes/objects/character/npc/task_dialogue.gd" id="2_ewouj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7lk3p"]
 

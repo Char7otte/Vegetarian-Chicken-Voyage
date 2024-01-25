@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjx1i4khxiwhm"]
 
-[ext_resource type="Script" path="res://scenes/objects/player/player.gd" id="1_lkrgk"]
-[ext_resource type="Script" path="res://scenes/objects/player/interact_raycast.gd" id="2_ft0wv"]
-[ext_resource type="Script" path="res://scenes/objects/player/dialogue_raycast.gd" id="3_7hxjv"]
+[ext_resource type="Script" path="res://scenes/objects/character/player/player.gd" id="1_lkrgk"]
+[ext_resource type="Script" path="res://scenes/objects/character/player/interact_raycast.gd" id="2_ft0wv"]
+[ext_resource type="Script" path="res://scenes/objects/character/player/dialogue_raycast.gd" id="3_7hxjv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7lk3p"]
 
