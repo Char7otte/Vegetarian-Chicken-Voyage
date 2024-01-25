@@ -2,6 +2,7 @@ extends Node
 
 signal make_reply_labels_invisible
 signal make_reply_labels_visible
+signal dialogue_finished
 
 @onready var game_manager = get_node("/root/GameManager")
 @onready var dialogue_box = %DialogueBox
@@ -18,6 +19,8 @@ func _ready():
 		NPC.start_dialogue.connect(on_start_dialogue)
 
 func on_start_dialogue(dialogue_component):
+	dialogue_finished.connect(dialogue_component.on_dialogue_finished)
+	
 	var dialogue_lines = dialogue_component.dialogue_lines
 	speaker_text = dialogue_lines.speaker_text
 	reply_options = dialogue_lines.reply_options
@@ -46,3 +49,4 @@ func on_option_selected():
 func end_dialogue():
 	dialogue_box.change_speaker_text("")
 	dialogue_progression = 0
+	dialogue_finished.emit()

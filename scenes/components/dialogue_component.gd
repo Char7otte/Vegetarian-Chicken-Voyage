@@ -17,3 +17,7 @@ func emit_start_dialogue():
 		return
 	talking = true
 	start_dialogue.emit(self)
+
+func on_dialogue_finished():
+	talking = false
+	dialogue_manager.dialogue_finished.disconnect(on_dialogue_finished)
