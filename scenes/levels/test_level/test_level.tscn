@@ -47,10 +47,10 @@ task_multiplier = 1
 [node name="Player" parent="." instance=ExtResource("2_llmoq")]
 
 [node name="TaskNPC" parent="." instance=ExtResource("7_wsmhf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -0.160038)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22529, 0, -0.160038)
 
 [node name="GenericNPC" parent="." instance=ExtResource("7_0divf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7.7945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22529, 0, 2.08939)
 
 [node name="Environment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
@@ -80,7 +80,7 @@ shape = SubResource("ConvexPolygonShape3D_7b0p5")
 [node name="InteractableObjects" type="Node3D" parent="."]
 
 [node name="1" type="Node3D" parent="InteractableObjects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50079, -1.5, 0.193208)
 
 [node name="Table" parent="InteractableObjects/1" instance=ExtResource("3_8l675")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -2)
@@ -89,25 +89,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
 
 [node name="2" type="Node3D" parent="InteractableObjects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 4.14392)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50079, -1.5, 4.33713)
 
 [node name="Table" parent="InteractableObjects/2" instance=ExtResource("3_8l675")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0.56322)
 
 [node name="Table2" parent="InteractableObjects/2" instance=ExtResource("3_8l675")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0.56322)
 
 [node name="3" type="Node3D" parent="InteractableObjects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1516, -1.5, 4.14392)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6524, -1.5, 4.33713)
 
 [node name="Table" parent="InteractableObjects/3" instance=ExtResource("3_8l675")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0.56322)
 
 [node name="Table2" parent="InteractableObjects/3" instance=ExtResource("3_8l675")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0.56322)
 
 [node name="4" type="Node3D" parent="InteractableObjects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.84933, -1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3501, -1.5, 0.193208)
 
 [node name="Table" parent="InteractableObjects/4" instance=ExtResource("3_8l675")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -2)
