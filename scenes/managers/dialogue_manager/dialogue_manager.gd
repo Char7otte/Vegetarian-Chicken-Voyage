@@ -7,7 +7,7 @@ signal dialogue_finished
 @onready var game_manager = get_node("/root/GameManager")
 @onready var dialogue_box = %DialogueBox
 
-var dialogue_progression: int
+var dialogue_progress: int
 var speaker_text: Array[PackedStringArray]
 var reply_options: Array[PackedStringArray]
 
@@ -20,6 +20,7 @@ func _ready():
 
 func on_start_dialogue(dialogue_component):
 	dialogue_finished.connect(dialogue_component.on_dialogue_finished)
+	dialogue_progress = 0
 	
 	var dialogue_lines = dialogue_component.dialogue_lines
 	speaker_text = dialogue_lines.speaker_text
@@ -28,25 +29,24 @@ func on_start_dialogue(dialogue_component):
 
 func change_lines():
 	make_reply_labels_invisible.emit()
-	if speaker_text.size() <= dialogue_progression:
+	if speaker_text.size() <= dialogue_progress:
 		end_dialogue()
 		return
-	for text in speaker_text[dialogue_progression]:
+	
+	for text in speaker_text[dialogue_progress]:
 		await dialogue_box.change_speaker_text(text)
-	if reply_options[dialogue_progression].is_empty():
+	
+	if reply_options[dialogue_progress].is_empty():
 		end_dialogue()
 		return
 	
 	make_reply_labels_visible.emit()
-	dialogue_box.change_replies_text(reply_options[dialogue_progression])
-	
-	await dialogue_box.option_selected
+	dialogue_box.change_replies_text(reply_options[dialogue_progress])
 
 func on_option_selected():
-	dialogue_progression += 1
+	dialogue_progress += 1
 	change_lines()
 
 func end_dialogue():
 	dialogue_box.change_speaker_text("")
-	dialogue_progression = 0
 	dialogue_finished.emit()
