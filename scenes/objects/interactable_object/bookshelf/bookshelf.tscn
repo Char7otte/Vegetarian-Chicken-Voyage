@@ -1,13 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbbkvgitv53vu"]
 
 [ext_resource type="PackedScene" uid="uid://kosas30wh7ad" path="res://scenes/components/task_component.tscn" id="2_uhb1a"]
-[ext_resource type="PackedScene" uid="uid://bpm1qiw5aj5cd" path="res://assets/models/bookshelf/Temporary Location for Blender/bookshelf.blend" id="3_dyvn5"]
+[ext_resource type="PackedScene" uid="uid://df1lx12m6xocy" path="res://assets/models/bookshelf/bookshelf.blend" id="3_dyvn5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_emvox"]
 size = Vector3(2.17603, 3.45313, 0.766541)
 
 [node name="Bookshelf" type="StaticBody3D"]
-collision_layer = 3
 
 [node name="TaskComponent" parent="." instance=ExtResource("2_uhb1a")]
 task_message = "Organize the bookshelf."

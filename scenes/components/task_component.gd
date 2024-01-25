@@ -9,10 +9,8 @@ signal task_completed(task_id)
 
 var task_id: int
 
-func _init():
-	add_to_group("InteractableObjects")
-
 func activate_interaction():
+	get_parent().set_collision_layer_value(2, true)
 	var animation_player = get_parent().get_node("Model").get_node_or_null("AnimationPlayer")
 	if !animation_player:
 		print("Animation Player not found on ", get_parent().name)

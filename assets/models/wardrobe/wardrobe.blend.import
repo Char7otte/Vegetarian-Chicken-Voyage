@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://7jbrs1o1r8fa"
-path="res://.godot/imported/Wardrobe.blend-838c8cc88267cc6d06e733463ea15d94.scn"
+uid="uid://dwcjh3pnkg43r"
+path="res://.godot/imported/wardrobe.blend-760aa6de793a010ce22c13fc3030ba23.scn"
 
 [deps]
 
-source_file="res://assets/models/wardrobe/Wardrobe.blend"
-dest_files=["res://.godot/imported/Wardrobe.blend-838c8cc88267cc6d06e733463ea15d94.scn"]
+source_file="res://assets/models/wardrobe/wardrobe.blend"
+dest_files=["res://.godot/imported/wardrobe.blend-760aa6de793a010ce22c13fc3030ba23.scn"]
 
 [params]
 

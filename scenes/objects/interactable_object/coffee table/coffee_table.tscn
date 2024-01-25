@@ -10,7 +10,6 @@ size = Vector3(4.39691, 0.999512, 1)
 size = Vector3(0.416138, 0.50531, 0.418701)
 
 [node name="Table" type="StaticBody3D"]
-collision_layer = 3
 
 [node name="TaskComponent" parent="." instance=ExtResource("2_2xrst")]
 task_message = "Clean up the table."
