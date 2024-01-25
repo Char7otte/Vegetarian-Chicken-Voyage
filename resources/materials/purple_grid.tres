@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d2jl85prmxbxo"]
+
+[ext_resource type="Texture2D" uid="uid://b1y1mqahv2mo2" path="res://assets/materials/prototyping/purple_grid.png" id="1_cuwmt"]
+
+[resource]
+albedo_texture = ExtResource("1_cuwmt")
+uv1_triplanar = true
+uv1_world_triplanar = true
