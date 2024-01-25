@@ -5,10 +5,14 @@ var days_counter = 1
 
 func get_dialogue_lines_for_the_day():
 	var dialogue_resource_array = dialogue_directory.get_files()
+	var file_name: String
 	if dialogue_resource_array.size() <= days_counter:
-		return load("res://resources/dialogue/test_level/" + dialogue_resource_array[0])
+		file_name = dialogue_resource_array[0]
 	else:
-		return load("res://resources/dialogue/test_level/" + dialogue_resource_array[days_counter])
+		file_name = dialogue_resource_array[days_counter]
+	if file_name.ends_with(".remap"):
+			file_name = file_name.trim_suffix(".remap")
+	return load("res://resources/dialogue/test_level/" + file_name)
 
 func disable_gameplay_nodes():
 	var nodes_to_disable: Array[Node] = []
