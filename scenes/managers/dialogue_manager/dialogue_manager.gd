@@ -26,12 +26,12 @@ func on_start_dialogue(dialogue_component):
 func change_lines():
 	make_reply_labels_invisible.emit()
 	if speaker_text.size() <= dialogue_progression:
+		end_dialogue()
 		return
 	for text in speaker_text[dialogue_progression]:
 		await dialogue_box.change_speaker_text(text)
 	if reply_options[dialogue_progression].is_empty():
-		dialogue_box.change_speaker_text("")
-		dialogue_progression = 0
+		end_dialogue()
 		return
 	
 	make_reply_labels_visible.emit()
@@ -42,3 +42,7 @@ func change_lines():
 func on_option_selected():
 	dialogue_progression += 1
 	change_lines()
+
+func end_dialogue():
+	dialogue_box.change_speaker_text("")
+	dialogue_progression = 0
