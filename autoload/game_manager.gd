@@ -1,6 +1,6 @@
 extends Node
 
-var dialogue_directory = DirAccess.open("res://resources/dialogue/test_level")
+var dialogue_directory = DirAccess.open("res://resources/dialogue/")
 var days_counter = 1
 
 func get_dialogue_lines_for_the_day():
@@ -12,7 +12,7 @@ func get_dialogue_lines_for_the_day():
 		file_name = dialogue_resource_array[days_counter]
 	
 	file_name = file_name.trim_suffix(".remap")
-	return load("res://resources/dialogue/test_level/" + file_name)
+	return load("res://resources/dialogue/" + file_name)
 
 func disable_gameplay_nodes():
 	var nodes_to_disable: Array[Node] = []

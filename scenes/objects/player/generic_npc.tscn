@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cd7pbd5oiwpjj"]
 
 [ext_resource type="PackedScene" uid="uid://c8r46doo1dloh" path="res://scenes/components/dialogue_component.tscn" id="2_2cm5g"]
-[ext_resource type="Resource" uid="uid://vr1r4n75o8at" path="res://resources/dialogue/test_level/test_level_0.tres" id="2_n1ojq"]
+[ext_resource type="Resource" uid="uid://vr1r4n75o8at" path="res://resources/dialogue/dialogue_0.tres" id="2_xdlvw"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7lk3p"]
 
@@ -14,7 +14,7 @@ albedo_color = Color(1, 0.631373, 1, 1)
 collision_layer = 5
 
 [node name="DialogueComponent" parent="." instance=ExtResource("2_2cm5g")]
-dialogue_lines = ExtResource("2_n1ojq")
+dialogue_lines = ExtResource("2_xdlvw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_7lk3p")
