@@ -10,8 +10,8 @@ func get_dialogue_lines_for_the_day():
 		file_name = dialogue_resource_array[0]
 	else:
 		file_name = dialogue_resource_array[days_counter]
-	if file_name.ends_with(".remap"):
-			file_name = file_name.trim_suffix(".remap")
+	
+	file_name = file_name.trim_suffix(".remap")
 	return load("res://resources/dialogue/test_level/" + file_name)
 
 func disable_gameplay_nodes():
