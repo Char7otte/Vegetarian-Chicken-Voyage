@@ -10,6 +10,7 @@ signal dialogue_finished
 var dialogue_progress: int
 var speaker_text: Array[PackedStringArray]
 var reply_options: Array[PackedStringArray]
+var is_talking: bool
 
 func _ready():
 	dialogue_box.option_selected.connect(on_option_selected)
@@ -19,8 +20,13 @@ func _ready():
 		NPC.start_dialogue.connect(on_start_dialogue)
 
 func on_start_dialogue(dialogue_component):
-	dialogue_finished.connect(dialogue_component.on_dialogue_finished)
+	if is_talking == true:
+		print("Already in a conversation.")
+		return
 	dialogue_progress = 0
+	is_talking = true
+	
+	dialogue_finished.connect(dialogue_component.on_dialogue_finished)
 	
 	var dialogue_lines = dialogue_component.dialogue_lines
 	speaker_text = dialogue_lines.speaker_text
@@ -49,4 +55,5 @@ func on_option_selected():
 
 func end_dialogue():
 	dialogue_box.change_speaker_text("")
+	is_talking = false
 	dialogue_finished.emit()
