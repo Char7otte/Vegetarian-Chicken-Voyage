@@ -12,6 +12,7 @@ var reply_options: Array[PackedStringArray]
 
 func _ready():
 	dialogue_box.option_selected.connect(on_option_selected)
+	
 	var NPCs = get_tree().get_nodes_in_group("NPC")
 	for NPC in NPCs:
 		NPC.start_dialogue.connect(on_start_dialogue)
