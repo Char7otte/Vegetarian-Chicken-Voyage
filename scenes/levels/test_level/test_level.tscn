@@ -46,6 +46,8 @@ task_multiplier = 1
 
 [node name="Player" parent="." instance=ExtResource("2_llmoq")]
 
+[node name="TaskNPC" parent="." instance=ExtResource("7_wsmhf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -0.160038)
 
 [node name="GenericNPC" parent="." instance=ExtResource("7_0divf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7.7945)
