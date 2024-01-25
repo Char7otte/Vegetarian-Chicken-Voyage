@@ -38,6 +38,7 @@ unique_name_in_owner = true
 [node name="CenterPopUp" parent="UserInterface" instance=ExtResource("6_6hptg")]
 
 [node name="TaskManager" parent="." instance=ExtResource("2_83d6k")]
+task_multiplier = 1
 
 [node name="DialogueManager" parent="." instance=ExtResource("3_rqt5v")]
 
