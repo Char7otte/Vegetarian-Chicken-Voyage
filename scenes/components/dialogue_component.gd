@@ -13,4 +13,7 @@ func _init():
 	add_to_group("NPC")
 
 func emit_start_dialogue():
-	start_dialogue.emit(dialogue_lines)
+	if talking:
+		return
+	talking = true
+	start_dialogue.emit(self)

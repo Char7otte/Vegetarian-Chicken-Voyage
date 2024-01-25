@@ -16,7 +16,8 @@ func _ready():
 	for NPC in NPCs:
 		NPC.start_dialogue.connect(on_start_dialogue)
 
-func on_start_dialogue(dialogue_lines):
+func on_start_dialogue(dialogue_component):
+	var dialogue_lines = dialogue_component.dialogue_lines
 	speaker_text = dialogue_lines.speaker_text
 	reply_options = dialogue_lines.reply_options
 	change_lines()
