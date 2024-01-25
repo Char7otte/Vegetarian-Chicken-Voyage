@@ -37,9 +37,10 @@ func change_speaker_text(new_text):
 	await speaker_speed_timer.timeout
 
 func change_replies_text(new_replies_array):
+	var for_loop_count = 0
 	for label in reply_labels:
-		label.text = new_replies_array[0]
-		new_replies_array.remove_at(0)
+		label.text = new_replies_array[for_loop_count]
+		for_loop_count += 1
 		print("REPLY: ", label.text)
 
 func make_reply_labels_invisible():
